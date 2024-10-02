@@ -1,7 +1,5 @@
 import ThemeSwitcher from '@/components/ThemeSwitcher'
-import LanguageDropElement from '@/components/header/LanguageDropElement'
 import { ReactElement, useEffect, useState } from 'react'
-import LanguageDropButtonElement from '@/components/header/LanguageDropButtonElement'
 import { locales } from '@/i18n/Language'
 import {
     LocaleState,
@@ -22,16 +20,13 @@ import { isDevEnv } from '@/util/Environment'
 import { FaGithub, FaDiscord, FaQq } from 'react-icons/fa'
 import { getPagesUnderRoute } from 'nextra/context'
 import { ToastLogger } from '@/util/Logger'
+import {FaBilibili} from "react-icons/fa6";
 
 export default function Header() {
     const dispatch = useDispatch()
     const router = useRouter()
 
     // React state
-    const [languageButtonState, setLanguageButtonState] =
-        useState<ReactElement>(
-            <LanguageDropButtonElement locale={locales.current} />,
-        )
     const [localesElementState, setLocalesElementState] = useState<
         ReactElement[]
     >([])
@@ -45,143 +40,6 @@ export default function Header() {
     const user = useAppSelector(selectUser)
 
     // React effect
-    useEffect(() => {
-        setLocalesElementState(
-            locales.available
-                .filter((locale) => locale !== locales.current)
-                .map((locale) => (
-                    <LanguageDropElement
-                        locale={locale}
-                        key={locale.locale}
-                        handleLocaleChangeCallback={handleLanguageChange}
-                    />
-                )),
-        )
-
-        const getBrowserLanguage = () => {
-            return (
-                localStorage.getItem('locale') ||
-                (navigator.language.includes('-')
-                    ? navigator.language.split('-')[0]
-                    : navigator.language)
-            )
-        }
-
-        function handleLanguageChange(
-            locale: LocaleState,
-            saveToStorage: boolean = true,
-        ) {
-            locales.current = locale
-
-            setLanguageButtonState(
-                <LanguageDropButtonElement locale={locale} />,
-            )
-            setLocalesElementState(
-                locales.available
-                    .filter((locale) => locale !== locales.current)
-                    .map((locale) => (
-                        <LanguageDropElement
-                            locale={locale}
-                            key={locale.locale}
-                            handleLocaleChangeCallback={handleLanguageChange}
-                        />
-                    )),
-            )
-
-            // Merge strings from default locale with the selected locale
-            const mergedStrings = Object.assign(
-                {},
-                locales.default.strings,
-                locale.strings,
-            )
-            dispatch(setLocale({ ...locale, strings: mergedStrings }))
-            saveToStorage &&
-                localStorage.setItem('locale', locales.current.locale)
-        }
-
-        handleLanguageChange(
-            locales.available.find(
-                (locale) => locale.locale === getBrowserLanguage(),
-            ) || locales.current,
-            false,
-        )
-    }, [dispatch])
-
-    // Start region - Handle docs routing
-    const [hasDocsRouteChanged, setHasDocsRouteChanged] = useState(false)
-    const handleDocsRouting = (hasLanguageSwitched: boolean = false) => {
-        if (
-            router.pathname.includes('mohist/docs') ||
-            router.pathname.includes('banner/docs')
-        ) {
-            // Prevent infinite loop
-            if (hasDocsRouteChanged) {
-                setHasDocsRouteChanged(false)
-                return
-            }
-
-            // Redirect to the correct locale only if the locale is not right
-            if (
-                !router.pathname.includes(locales.current.locale.toLowerCase())
-            ) {
-                const otherLanguagesLocaleNames = locales.available
-                    .filter(
-                        (locale) => locale.locale !== locales.current.locale,
-                    )
-                    .map((locale) => locale.locale.toLowerCase())
-
-                // Check if the selected locale has docs, if not, redirect to the default locale
-                const pages = [
-                    ...getPagesUnderRoute(
-                        `/mohist/docs/${locales.current.locale.toLowerCase()}`,
-                    ),
-                    ...getPagesUnderRoute(
-                        `/banner/docs/${locales.current.locale.toLowerCase()}`,
-                    ),
-                ]
-                const availableDocLocaleToLowerCase =
-                    pages.length > 0
-                        ? locales.current.locale.toLowerCase()
-                        : locales.default.locale.toLowerCase()
-                if (pages.length === 0 && hasLanguageSwitched) {
-                    ToastLogger.warn(
-                        strings['toast.docsNotAvailableInSelectedLocale'],
-                        15000,
-                    )
-                }
-
-                // Check if the current pathname has a locale, if so, replace it with the new locale, if not, add the new locale
-                const newPathname = otherLanguagesLocaleNames.some((locale) =>
-                    router.pathname.includes(locale),
-                )
-                    ? router.pathname.replace(
-                          otherLanguagesLocaleNames.find((locale) =>
-                              router.pathname.includes(locale),
-                          )!,
-                          availableDocLocaleToLowerCase,
-                      )
-                    : router.pathname.replace(
-                          '/docs',
-                          `/docs/${availableDocLocaleToLowerCase}`,
-                      )
-
-                setHasDocsRouteChanged(true)
-                router.push(newPathname).catch()
-            }
-        }
-    }
-
-    // Handle route change between docs pages
-    useEffect(() => {
-        handleDocsRouting()
-    }, [router, router.pathname])
-
-    // Switch the docs page to the correct locale when the language is changed
-    useEffect(() => {
-        handleDocsRouting(true)
-    }, [locales.current])
-    // End region - Handle docs routing
-
     const pageName = router.pathname.split('/')[1]
 
     // On route change
@@ -227,16 +85,9 @@ export default function Header() {
                     <Link
                         href="https://github.com/MohistMC"
                         aria-label="Github"
-                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
+                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
                     >
                         <FaGithub className="w-6 h-6" />
-                    </Link>
-                    <Link
-                        href="https://discord.gg/mohistmc"
-                        aria-label={'Discord'}
-                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
-                    >
-                        <FaDiscord className="w-6 h-6" />
                     </Link>
                     <Link
                         href="https://qm.qq.com/q/7onbAp4PUQ"
@@ -244,6 +95,12 @@ export default function Header() {
                         className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
                     >
                         <FaQq className="w-5 h-5" />
+                    </Link>
+                    <Link
+                        href="https://space.bilibili.com/15859660"
+                        className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+                    >
+                        <FaBilibili className="w-6 h-6" />
                     </Link>
                     <button
                         data-collapse-toggle="mobile-menu-language-select"

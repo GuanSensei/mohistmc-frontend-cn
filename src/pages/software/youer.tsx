@@ -159,11 +159,11 @@ export default function MohistSoftware() {
                     </p>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link
-                            href="https://discord.gg/MohistMC"
+                            href="https://qm.qq.com/q/7onbAp4PUQ"
                             target="_blank"
                             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                         >
-                            {strings['software.youer.footer.discord']}
+                            {strings['software.youer.footer.qq']}
                             <svg
                                 className="w-5 h-5 ml-2"
                                 fill="currentColor"

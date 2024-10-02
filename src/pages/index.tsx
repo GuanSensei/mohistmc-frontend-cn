@@ -61,7 +61,7 @@ const Home = () => {
         <section className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>{strings['index.page.title']}</title>
-                <meta name="title" content="墨孤蓝网络科技 -Home" />
+                <meta name="title" content="墨孤蓝网络科技 - 主页" />
                 <meta
                     name="description"
                     content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}
@@ -69,7 +69,7 @@ const Home = () => {
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://mohistmc.com/" />
-                <meta property="og:title" content="墨孤蓝网络科技 -Home" />
+                <meta property="og:title" content="墨孤蓝网络科技 - 主页" />
                 <meta
                     property="og:description"
                     content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}
@@ -83,7 +83,7 @@ const Home = () => {
                 <meta property="og:image:height" content="100" />
 
                 <meta property="twitter:url" content="https://mohistmc.com/" />
-                <meta property="twitter:title" content="墨孤蓝网络科技 -Home" />
+                <meta property="twitter:title" content="墨孤蓝网络科技 - 主页" />
                 <meta
                     property="twitter:description"
                     content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}
@@ -239,22 +239,6 @@ const Home = () => {
                 </div>
             </section>
             <StatisticsElement />
-            <section
-                className={`bg-gray-50 dark:bg-dark-25 flex justify-center flex-col items-center pt-12`}
-            >
-                <h2 className="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
-                    {getLocaleStringAsArgs(strings['index.partner.title'])[0]}
-                    <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
-                        {
-                            getLocaleStringAsArgs(
-                                strings['index.partner.title'],
-                            )[1]
-                        }
-                    </span>
-                    {getLocaleStringAsArgs(strings['index.partner.title'])[2]}
-                </h2>
-                <DefaultCarousel />
-            </section>
         </section>
     )
 }

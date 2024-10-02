@@ -4,7 +4,8 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { getCopyrightText } from '@/util/String'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
-import { FaGithub, FaDiscord, FaTwitter } from 'react-icons/fa'
+import {FaGithub, FaTwitter, FaQq} from 'react-icons/fa'
+import { FaBilibili } from "react-icons/fa6";
 
 export default function Footer() {
     const strings = useAppSelector(selectTranslations)
@@ -25,31 +26,11 @@ export default function Footer() {
                             </span>
                         </Link>
                         <Link
-                            href={`mailto:mohistmc@gmail.com`}
-                            className="block text-gray-600 mt-4 text-sm dark:text-gray-400 md:hover:text-blue-500"
+                            href={`mailto:mohistmc@163.com`}
+                            className="block text-gray-600 mt-8 text-sm dark:text-gray-400 md:hover:text-blue-500"
                         >
-                            mohistmc@gmail.com
+                            mohistmc@163.com
                         </Link>
-                        <p
-                            className={`dark:text-gray-400 text-gray-600 text-sm max-w-sm pt-1`}
-                        >
-                            Do not send your bugs to this email, please use our
-                            issue tracker{' '}
-                            <Link
-                                href="https://github.com/MohistMC/Mohist/issues"
-                                className="dark:text-blue-500 text-blue-700"
-                            >
-                                for Mohist
-                            </Link>{' '}
-                            or{' '}
-                            <Link
-                                href="https://github.com/MohistMC/Banner/issues"
-                                className="dark:text-blue-500 text-blue-700"
-                            >
-                                for Banner
-                            </Link>{' '}
-                            instead.
-                        </p>
                     </div>
                     <div className="flex gap-12 flex-wrap">
                         <div>
@@ -137,14 +118,6 @@ export default function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="https://discord.gg/mohistmc"
-                                        className="md:hover:text-blue-500"
-                                    >
-                                        {strings['social.discord']}
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
                                         href="https://github.com/MohistMC"
                                         className="md:hover:text-blue-500"
                                     >
@@ -168,27 +141,14 @@ export default function Footer() {
                     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                         {getCopyrightText()}{' '}
                         <Link
-                            href="/"
-                            className="hover:underline md:dark:hover:text-gray-500"
-                        >
-                            MohistMC
-                        </Link>
-                        <a
                             href="https://beian.miit.gov.cn"
-                            id="beian"
-                            target="_blank"
+                            className="hover:underline md:dark:hover:text-gray-500"
                         >
                             {' 桐乡市墨孤蓝网络科技有限公司版权所有 '}
                             浙ICP备2024124748号
-                        </a>
+                        </Link>
                     </span>
                     <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                        <Link
-                            href="https://twitter.com/mohistmc"
-                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-                        >
-                            <FaTwitter className="w-5 h-5" />
-                        </Link>
                         <Link
                             href="https://github.com/MohistMC/"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -196,10 +156,16 @@ export default function Footer() {
                             <FaGithub className="w-5 h-5" />
                         </Link>
                         <Link
-                            href="https://discord.gg/mohistmc"
+                            href="https://qm.qq.com/q/7onbAp4PUQ"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                         >
-                            <FaDiscord className="w-5 h-5" />
+                            <FaQq className="w-5 h-5" />
+                        </Link>
+                        <Link
+                            href="https://space.bilibili.com/15859660"
+                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                        >
+                            <FaBilibili className="w-5 h-5" />
                         </Link>
                     </div>
                 </div>

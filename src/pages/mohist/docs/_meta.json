@@ -1,10 +1,9 @@
 {
-    "en-us": {
-        "title": "English",
-        "type": "page"
-    },
-    "zh-cn": {
-        "title": "简体中文",
-        "type": "page"
-    }
+    "index": "介绍",
+    "requirements": "需求",
+    "installation": "安装",
+    "configuration": "配置文件",
+    "commands": "命令列表",
+    "versions": "版本",
+    "developers": "开发指导"
 }
