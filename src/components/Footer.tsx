@@ -4,8 +4,8 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { getCopyrightText } from '@/util/String'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
-import {FaGithub, FaTwitter, FaQq} from 'react-icons/fa'
-import { FaBilibili } from "react-icons/fa6";
+import { FaGithub, FaQq } from 'react-icons/fa'
+import { FaBilibili } from 'react-icons/fa6'
 
 export default function Footer() {
     const strings = useAppSelector(selectTranslations)

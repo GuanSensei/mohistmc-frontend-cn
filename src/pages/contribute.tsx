@@ -31,7 +31,10 @@ const Contribute = () => {
                         property="og:url"
                         content="https://mohistmc.com/contribute"
                     />
-                    <meta property="og:title" content="墨孤蓝网络科技 -Contribute" />
+                    <meta
+                        property="og:title"
+                        content="墨孤蓝网络科技 -Contribute"
+                    />
                     <meta
                         property="og:description"
                         content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!"

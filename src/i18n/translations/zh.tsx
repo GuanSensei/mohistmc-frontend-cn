@@ -1,4 +1,3 @@
-
 const zhTranslation = {
     name: '简体中文',
     locale: 'zh-CN',
@@ -122,7 +121,7 @@ const zhTranslation = {
             '通过模组和插件的集成，以及优化的性能，体验无与伦比的稳定性。加入Mohist社区，为您的服务器解锁无限可能性。立即升级到Mohist，革新您的Minecraft体验。',
         'software.mohist.footer.qq': '加入我们的QQ群',
         'software.mohist.footer.shop': '前往我们的商城',
-	    '404.title': 'not found',
+        '404.title': 'not found',
         '404.subtitle': '很抱歉，您所寻找的资源在本网站上找不到。',
         'docs.title': 'MohistMC的文档',
         'docs.subtitle':
@@ -163,7 +162,7 @@ const zhTranslation = {
         'software.youer.footer.title': '准备提升您的Minecraft服务器体验吗？',
         'software.youer.footer.desc':
             '通过模组和插件的集成，以及优化的性能，体验无与伦比的稳定性。加入MohistMC社区，为您的服务器解锁无限可能性。立即升级到Youer，革新您的Minecraft体验。',
-	    'software.youer.footer.qq': '加入我们的QQ群',
+        'software.youer.footer.qq': '加入我们的QQ群',
         'toast.filters.enabled':
             '您仍然启用了过滤器，如果您看不到任何内容，可能需要将其移除。',
         'toast.logged.success': '您已成功登录。',

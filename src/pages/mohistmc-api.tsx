@@ -44,7 +44,10 @@ export default function MohistMCApi() {
                         property="og:url"
                         content="https://mohistmc.com/mohistmc-api"
                     />
-                    <meta property="og:title" content="墨孤蓝网络科技 -JSON API" />
+                    <meta
+                        property="og:title"
+                        content="墨孤蓝网络科技 -JSON API"
+                    />
                     <meta
                         property="og:description"
                         content={`Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! ${getCopyrightText()} MohistMC.`}

@@ -1,11 +1,6 @@
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import { ReactElement, useEffect, useState } from 'react'
-import { locales } from '@/i18n/Language'
-import {
-    LocaleState,
-    selectTranslations,
-    setLocale,
-} from '@/features/i18n/TranslatorSlice'
+import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -17,10 +12,8 @@ import { selectUser } from '@/features/user/UserSlice'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
 import { isDevEnv } from '@/util/Environment'
-import { FaGithub, FaDiscord, FaQq } from 'react-icons/fa'
-import { getPagesUnderRoute } from 'nextra/context'
-import { ToastLogger } from '@/util/Logger'
-import {FaBilibili} from "react-icons/fa6";
+import { FaGithub, FaQq } from 'react-icons/fa'
+import { FaBilibili } from 'react-icons/fa6'
 
 export default function Header() {
     const dispatch = useDispatch()

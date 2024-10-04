@@ -29,7 +29,10 @@ export default function Downloads() {
                         property="og:url"
                         content="https://mohistmc.com/downloads"
                     />
-                    <meta property="og:title" content="墨孤蓝网络科技 -Downloads" />
+                    <meta
+                        property="og:title"
+                        content="墨孤蓝网络科技 -Downloads"
+                    />
                     <meta
                         property="og:description"
                         content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}

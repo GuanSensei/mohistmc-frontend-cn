@@ -40,7 +40,10 @@ export default function MohistSoftware() {
                     property="twitter:url"
                     content="https://mohistmc.com/software/mohist"
                 />
-                <meta property="twitter:title" content="墨孤蓝网络科技 -Banner" />
+                <meta
+                    property="twitter:title"
+                    content="墨孤蓝网络科技 -Banner"
+                />
                 <meta
                     property="twitter:description"
                     content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`}

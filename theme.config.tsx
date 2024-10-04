@@ -12,22 +12,6 @@ const config: DocsThemeConfig = {
             return <></>
         },
     },
-    useNextSeoProps: function SEO() {
-        const router = useRouter()
-        const { frontMatter } = useConfig()
-
-        const section = router?.pathname.startsWith('/mohist')
-            ? 'Mohist'
-            : router?.pathname.startsWith('/blog')
-              ? 'Blog'
-              : 'Banner'
-        const defaultTitle = frontMatter.overrideTitle || section
-
-        return {
-            defaultTitle,
-            titleTemplate: `%s – ${section}`,
-        }
-    },
     head: function useHead() {
         const router = useRouter()
 
@@ -40,7 +24,8 @@ const config: DocsThemeConfig = {
             section === 'Blog'
                 ? `Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. ${getCopyrightText()} MohistMC.`
                 : `Need help setting up, configuring and using our software? The docs are here to help you. ${getCopyrightText()} MohistMC.`
-        const title = section === 'Blog' ? '墨孤蓝网络科技 -Blog' : '墨孤蓝网络科技 -Docs'
+        const title =
+            section === 'Blog' ? '墨孤蓝网络科技 -Blog' : '墨孤蓝网络科技 -Docs'
 
         return (
             <>
@@ -72,7 +57,7 @@ const config: DocsThemeConfig = {
         component: null,
     },
     editLink: {
-        text: 'Edit this page on GitHub',
+        content: 'Edit this page on GitHub',
     },
     gitTimestamp: function GitTimestamp({ timestamp }) {
         const [dateString, setDateString] = useState(timestamp.toISOString())

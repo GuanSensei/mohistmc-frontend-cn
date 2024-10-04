@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
@@ -6,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import SponsorAvatar from '@/components/sponsor/SponsorAvatar'
 import Head from 'next/head'
 import { customTheme } from '@/util/Theme'
-import { Flowbite, Button, Popover } from 'flowbite-react'
+import { Button, Flowbite, Popover } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import { FaAlipay } from 'react-icons/fa'
@@ -69,7 +68,10 @@ const Sponsor = () => {
                         property="og:url"
                         content="https://mohistmc.com/sponsor"
                     />
-                    <meta property="og:title" content="墨孤蓝网络科技 -Sponsor" />
+                    <meta
+                        property="og:title"
+                        content="墨孤蓝网络科技 -Sponsor"
+                    />
                     <meta
                         property="og:description"
                         content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!"

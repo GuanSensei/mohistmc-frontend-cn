@@ -1,4 +1,4 @@
-import { Card, Button } from 'flowbite-react'
+import { Button, Card } from 'flowbite-react'
 import { useAppSelector } from '@/util/redux/Hooks'
 import {
     selectTranslations,

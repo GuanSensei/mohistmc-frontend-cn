@@ -3,7 +3,6 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import Link from 'next/link'
 import Head from 'next/head'
 import { getCopyrightText } from '@/util/String'
-import { locales } from '@/i18n/Language'
 
 export default function Downloads() {
     const strings = useAppSelector(selectTranslations)
