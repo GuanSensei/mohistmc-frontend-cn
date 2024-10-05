@@ -1,4 +1,4 @@
-export default {
+const meta = {
     index: '介绍',
     requirements: '需求',
     installation: '安装',
@@ -7,3 +7,5 @@ export default {
     versions: '版本',
     developers: '开发指导',
 }
+
+export default meta;

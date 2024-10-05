@@ -1,6 +1,8 @@
-export default {
+const meta = {
     modsandplugins: '模组和插件',
     setup: '设置',
     build: '构建',
     patches: '生成补丁',
 }
+
+export default meta;

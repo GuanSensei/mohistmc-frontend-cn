@@ -1,4 +1,4 @@
-export default {
+const meta = {
     '*': {
         display: 'hidden',
         theme: {
@@ -10,3 +10,5 @@ export default {
     },
     test: 'Test article MohistMC',
 }
+
+export default meta;

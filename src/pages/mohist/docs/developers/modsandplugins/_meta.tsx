@@ -1,6 +1,8 @@
-export default {
+const meta = {
     writemodandplugin: '编写模组和插件',
     dependencies: '依赖',
     callforgefrombukkit: '从 Bukkit 调用 Forge',
     callbukkitfromforge: '从 Forge 调用 Bukkit',
 }
+
+export default meta;

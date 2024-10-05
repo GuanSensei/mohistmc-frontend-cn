@@ -1,4 +1,6 @@
-export default {
+
+
+const meta = {
     '*': {
         type: 'page',
     },
@@ -23,3 +25,5 @@ export default {
         title: 'Banner',
     },
 }
+
+export default meta;
