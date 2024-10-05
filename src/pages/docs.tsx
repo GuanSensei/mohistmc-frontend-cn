@@ -10,8 +10,8 @@ export default function Downloads() {
     return (
         <section className="flex flex-col justify-center items-center pt-20 pb-10 bg-white dark:bg-dark-25">
             <Head>
-                <title>墨孤蓝网络科技 -Docs</title>
-                <meta name="title" content="墨孤蓝网络科技 -Docs" />
+                <title>墨孤蓝网络科技 - Docs</title>
+                <meta name="title" content="墨孤蓝网络科技 - Docs" />
                 <meta
                     name="description"
                     content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`}
@@ -19,7 +19,7 @@ export default function Downloads() {
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://mohistmc.com/docs" />
-                <meta property="og:title" content="墨孤蓝网络科技 -Docs" />
+                <meta property="og:title" content="墨孤蓝网络科技 - Docs" />
                 <meta
                     property="og:description"
                     content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`}
@@ -36,7 +36,10 @@ export default function Downloads() {
                     property="twitter:url"
                     content="https://mohistmc.com/docs"
                 />
-                <meta property="twitter:title" content="墨孤蓝网络科技 -Docs" />
+                <meta
+                    property="twitter:title"
+                    content="墨孤蓝网络科技 - Docs"
+                />
                 <meta
                     property="twitter:description"
                     content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`}
@@ -73,7 +76,6 @@ export default function Downloads() {
                         {strings['index.cards.banner.description']}
                     </p>
                 </Link>
-
                 <Link
                     href="/mohistmc-api"
                     className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-dark-100 dark:border-dark-200 dark:hover:bg-dark-150"

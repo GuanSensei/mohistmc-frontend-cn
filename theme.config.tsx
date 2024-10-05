@@ -26,7 +26,9 @@ const config: DocsThemeConfig = {
                 ? `Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. ${getCopyrightText()} MohistMC.`
                 : `Need help setting up, configuring and using our software? The docs are here to help you. ${getCopyrightText()} MohistMC.`
         const title =
-            section === 'Blog' ? '墨孤蓝网络科技 -Blog' : '墨孤蓝网络科技 -Docs'
+            section === 'Blog'
+                ? '墨孤蓝网络科技 - Blog'
+                : '墨孤蓝网络科技 - Docs'
 
         return (
             <>

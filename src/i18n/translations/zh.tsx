@@ -53,7 +53,7 @@ const zhTranslation = {
         'social.opencollective': 'OpenCollective',
         'social.ghsponsors': 'GitHub 赞助商',
         'social.alipay': '支付宝',
-        'downloads.page.title': '墨孤蓝网络科技 -下载',
+        'downloads.page.title': '墨孤蓝网络科技 - 下载',
         'downloads.title': '免费下载我们的任何软件！',
         'downloads.mohist.desc':
             '一个实现了Bukkit、Spigot API的Minecraft Forge服务器软件。使用此软件，您可以创建一个带有模组和插件的Minecraft服务器！',
@@ -62,7 +62,7 @@ const zhTranslation = {
         'downloads.your.desc':
             '一个实现了Bukkit和Spigot API的Minecraft NeoForge服务器软件。这个软件允许您创建一个使用NeoForge模组和插件的Minecraft服务器，就像Mohist一样，但是适用于NeoForge。',
         'downloads.endtext': '目前就这些了',
-        'downloadSoftware.page.title': '墨孤蓝网络科技 -下载 {}',
+        'downloadSoftware.page.title': '墨孤蓝网络科技 - 下载 {}',
         'downloadSoftware.title': '下载% %',
         'downloadSoftware.mohist.desc':
             '下载 Mohist，我们的 Minecraft 混合 Forge + Bukkit/Spigot 服务器软件。',
@@ -90,20 +90,20 @@ const zhTranslation = {
             'Mohist 1.19.4已停止维护，不建议使用。',
         'downloadSoftware.mohist.1.20.toast':
             'Mohist 1.20已停止维护，请使用Mohist 1.20.1以获取更新。',
-        'sponsor.page.title': '墨孤蓝网络科技 -赞助',
+        'sponsor.page.title': '墨孤蓝网络科技 - 赞助',
         'sponsor.title': '支持MohistMC的Minecraft创新未来',
         'sponsor.subtitle':
             '帮助推动MohistMC社区的发展。您的支持将覆盖必要的费用，包括服务、服务器和基础设施。立即贡献，改变MohistMC的未来。',
         'sponsor.section.title': '我们的赞助商',
         'sponsor.section.subtitle': '他们相信我们的项目！',
-        'mohistapi.page.title': '墨孤蓝网络科技 -JSON API',
+        'mohistapi.page.title': '墨孤蓝网络科技 - JSON API',
         'mohistapi.title': 'MohistMC的JSON API',
         'mohistapi.subtitle':
             'MohistMC为开发人员提供了一个JSON API，用于获取有关MohistMC项目和构建的信息。',
-        'team.page.title': '墨孤蓝网络科技 -我们的团队',
+        'team.page.title': '墨孤蓝网络科技 - 我们的团队',
         'team.title': 'MohistMC%成员%',
         'team.community.title': '社区贡献者',
-        'software.mohist.page.title': '墨孤蓝网络科技 -Mohist',
+        'software.mohist.page.title': '墨孤蓝网络科技 - Mohist',
         'software.mohist.subtitle':
             'Mohist是一个出色的Minecraft Forge服务器软件，实现了Bukkit、Spigot API。通过利用这个强大的组合，您可以创建一个高性能的Minecraft服务器，能够集成模组和插件，确保稳定性和最佳性能。',
         'software.mohist.cards.title': 'Mohist有什么特别之处？',
@@ -129,7 +129,7 @@ const zhTranslation = {
         'docs.cards.websiteapi.title': '网站API',
         'docs.cards.websiteapi.desc':
             'MohistMC为开发人员提供了一个JSON API，用于获取有关MohistMC项目和构建的信息。',
-        'software.banner.page.title': '墨孤蓝网络科技 -banner',
+        'software.banner.page.title': '墨孤蓝网络科技 - banner',
         'software.banner.subtitle':
             'banner是一个独特的项目，无缝地结合了Fabric和Bukkit用于Minecraft。作为一个Fabric模组，它允许您创建一个功能丰富的Minecraft服务器，能够集成模组和插件，确保稳定性和增强的游戏体验。通过充分利用Fabric和Bukkit的优势，banner为服务器定制和游戏增强打开了无限的可能性。',
         'software.banner.cards.title': 'banner有什么特别之处？',
@@ -145,7 +145,7 @@ const zhTranslation = {
         'software.banner.footer.desc':
             '通过模组和插件的集成，体验无与伦比的稳定性。加入banner社区，为您的服务器解锁无限可能性。立即升级到banner，革新您的Minecraft体验。',
         'software.banner.footer.qq': '加入我们的QQ群',
-        'software.youer.page.title': '墨孤蓝网络科技 -Youer',
+        'software.youer.page.title': '墨孤蓝网络科技 - Youer',
         'software.youer.title': 'Youer - 即将到来',
         'software.youer.subtitle':
             'Youer是一个出色的NeoForge服务器软件，实现了Bukkit、Spigot API。通过利用这个强大的组合，您可以创建一个高性能的Minecraft服务器，能够集成模组和插件，确保稳定性和最佳性能。',
@@ -186,7 +186,7 @@ const zhTranslation = {
         'issuemodal.dropdown.item.website': '网站',
         'issuemodal.discord.text':
             '您也可以在Discord上与我们互动寻求帮助！但请注意，由于我们面临的高需求，大多数情况下仍需要提交问题报告。因此，Discord可能并不总是解决您的问题的最有效方式。',
-        'contribute.page.title': '墨孤蓝网络科技 -贡献',
+        'contribute.page.title': '墨孤蓝网络科技 - 贡献',
         'contribute.title': '为%MohistMC%做出贡献，帮助我们改进软件！',
         'contribute.subtitle':
             'MohistMC制作开源项目，由社区贡献推动。您可以通过多种方式参与塑造这些项目。',
@@ -253,7 +253,7 @@ const zhTranslation = {
         'just.now': '刚才',
         'time.format.mohth': '月',
         'vault.format.mohth': '￥',
-        'subscription.page.title': '墨孤蓝网络科技 -订阅',
+        'subscription.page.title': '墨孤蓝网络科技 - 订阅',
         'subscription.title': '定价计划',
         'subscription.subtitle': '帐户计划可解锁其他功能',
         'subscription.items.free': '铲',
@@ -271,6 +271,7 @@ const zhTranslation = {
         'table.page.2': '共',
         'toast.docsNotAvailableInSelectedLocale':
             '抱歉，此文档不支持您选择的语言。',
+        'mcserver.page.title': '墨孤蓝网络科技 - 服务器列表',
     },
 }
 

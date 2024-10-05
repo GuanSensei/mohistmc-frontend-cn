@@ -16,7 +16,7 @@ export default function Team() {
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
             <Head>
                 <title>{strings['team.page.title']}</title>
-                <meta name="title" content="墨孤蓝网络科技 -Our team" />
+                <meta name="title" content="墨孤蓝网络科技 - Our team" />
                 <meta
                     name="description"
                     content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`}
@@ -24,7 +24,7 @@ export default function Team() {
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://mohistmc.com/team" />
-                <meta property="og:title" content="墨孤蓝网络科技 -Team" />
+                <meta property="og:title" content="墨孤蓝网络科技 - Team" />
                 <meta
                     property="og:description"
                     content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`}
@@ -41,7 +41,10 @@ export default function Team() {
                     property="twitter:url"
                     content="https://mohistmc.com/team"
                 />
-                <meta property="twitter:title" content="墨孤蓝网络科技 -Team" />
+                <meta
+                    property="twitter:title"
+                    content="墨孤蓝网络科技 - Team"
+                />
                 <meta
                     property="twitter:description"
                     content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`}

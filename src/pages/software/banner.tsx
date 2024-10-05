@@ -12,7 +12,7 @@ export default function MohistSoftware() {
         <section className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>{strings['software.banner.page.title']}</title>
-                <meta name="title" content="墨孤蓝网络科技 -Banner" />
+                <meta name="title" content="墨孤蓝网络科技 - Banner" />
                 <meta
                     name="description"
                     content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`}
@@ -23,7 +23,7 @@ export default function MohistSoftware() {
                     property="og:url"
                     content="https://mohistmc.com/software/mohist"
                 />
-                <meta property="og:title" content="墨孤蓝网络科技 -Banner" />
+                <meta property="og:title" content="墨孤蓝网络科技 - Banner" />
                 <meta
                     property="og:description"
                     content={`Discover Banner: Fabric and Bukkit for Minecraft. Create feature-rich servers with mods and plugins. Enjoy stability and customization. Join our community for support and updates. Elevate your Minecraft journey with Banner. ${getCopyrightText()} MohistMC.`}
@@ -42,7 +42,7 @@ export default function MohistSoftware() {
                 />
                 <meta
                     property="twitter:title"
-                    content="墨孤蓝网络科技 -Banner"
+                    content="墨孤蓝网络科技 - Banner"
                 />
                 <meta
                     property="twitter:description"

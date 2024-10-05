@@ -20,7 +20,7 @@ const Contribute = () => {
             <section className={`bg-white dark:bg-dark-25 flex flex-col`}>
                 <Head>
                     <title>{strings['contribute.page.title']}</title>
-                    <meta name="title" content="墨孤蓝网络科技 -Contribute" />
+                    <meta name="title" content="墨孤蓝网络科技 - Contribute" />
                     <meta
                         name="description"
                         content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!"
@@ -33,7 +33,7 @@ const Contribute = () => {
                     />
                     <meta
                         property="og:title"
-                        content="墨孤蓝网络科技 -Contribute"
+                        content="墨孤蓝网络科技 - Contribute"
                     />
                     <meta
                         property="og:description"
@@ -53,7 +53,7 @@ const Contribute = () => {
                     />
                     <meta
                         property="twitter:title"
-                        content="墨孤蓝网络科技 -Contribute"
+                        content="墨孤蓝网络科技 - Contribute"
                     />
                     <meta
                         property="twitter:description"

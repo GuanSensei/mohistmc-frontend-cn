@@ -18,7 +18,7 @@ export default function Downloads() {
             <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
                 <Head>
                     <title>{strings['downloads.page.title']}</title>
-                    <meta name="title" content="墨孤蓝网络科技 -Downloads" />
+                    <meta name="title" content="墨孤蓝网络科技 - Downloads" />
                     <meta
                         name="description"
                         content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
@@ -31,7 +31,7 @@ export default function Downloads() {
                     />
                     <meta
                         property="og:title"
-                        content="墨孤蓝网络科技 -Downloads"
+                        content="墨孤蓝网络科技 - Downloads"
                     />
                     <meta
                         property="og:description"
@@ -51,7 +51,7 @@ export default function Downloads() {
                     />
                     <meta
                         property="twitter:title"
-                        content="墨孤蓝网络科技 -Downloads"
+                        content="墨孤蓝网络科技 - Downloads"
                     />
                     <meta
                         property="twitter:description"

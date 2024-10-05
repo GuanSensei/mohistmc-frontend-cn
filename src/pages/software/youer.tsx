@@ -12,7 +12,7 @@ export default function MohistSoftware() {
         <section className="bg-white dark:bg-dark-25 pt-12">
             <Head>
                 <title>{strings['software.youer.page.title']}</title>
-                <meta name="title" content="墨孤蓝网络科技 -Youer" />
+                <meta name="title" content="墨孤蓝网络科技 - Youer" />
                 <meta
                     name="description"
                     content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`}
@@ -23,7 +23,7 @@ export default function MohistSoftware() {
                     property="og:url"
                     content="https://mohistmc.com/software/youer"
                 />
-                <meta property="og:title" content="墨孤蓝网络科技 -Mohist" />
+                <meta property="og:title" content="墨孤蓝网络科技 - Mohist" />
                 <meta
                     property="og:description"
                     content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`}
@@ -42,7 +42,7 @@ export default function MohistSoftware() {
                 />
                 <meta
                     property="twitter:title"
-                    content="墨孤蓝网络科技 -Youer"
+                    content="墨孤蓝网络科技 - Youer"
                 />
                 <meta
                     property="twitter:description"
