@@ -56,8 +56,15 @@ const config: DocsThemeConfig = {
     themeSwitch: {
         component: null,
     },
+    toc: {
+        title: '本页内容',
+        backToTop: '滚动到顶部',
+    },
+    feedback: {
+        content: '问题？给我们反馈 →',
+    },
     editLink: {
-        content: 'Edit this page on GitHub',
+        content: '在 GitHub 上编辑此页',
     },
     gitTimestamp: function GitTimestamp({ timestamp }) {
         const [dateString, setDateString] = useState(timestamp.toISOString())
