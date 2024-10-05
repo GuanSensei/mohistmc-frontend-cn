@@ -65,7 +65,7 @@ const IssueReportModal = ({
                             </Dropdown.Item>
                             <Dropdown.Item>
                                 <Link
-                                    href={`https://github.com/MohistMC/Website/issues`}
+                                    href={`https://github.com/MohistMC/mohistmc-frontend-cn/issues`}
                                 >
                                     {
                                         strings[

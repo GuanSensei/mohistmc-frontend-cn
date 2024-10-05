@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import { getCopyrightText } from '@/util/String'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useSelector } from 'react-redux'
 
 const config: DocsThemeConfig = {
-    docsRepositoryBase: 'https://github.com/MohistMC/website/tree/frontend',
+    docsRepositoryBase:
+        'https://github.com/MohistMC/mohistmc-frontend-cn/tree/master',
     footer: {
         component: function () {
             return <></>

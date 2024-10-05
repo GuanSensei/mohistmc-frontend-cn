@@ -24,7 +24,7 @@ It's still under development, feel free to contribute!
 First, clone the repository and install the dependencies:
 
 ```bash
-git clone -b frontend https://github.com/MohistMC/Website.git
+git clone -b frontend https://github.com/MohistMC/mohistmc-frontend-cn.git
 cd Website
 npm install
 ```
