@@ -2,8 +2,6 @@ import { Poppins } from 'next/font/google'
 import { AppProps } from 'next/app'
 import '../app/globals.scss'
 import '../app/nextra-custom.scss'
-import 'flowbite-react'
-import 'flowbite'
 import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Header from '@/components/Header'
@@ -44,7 +42,8 @@ export default function App({ Component, pageProps }: AppProps) {
     })
 
     useEffect(() => {
-        document.documentElement.lang = 'en'
+        import('flowbite').then(({ initFlowbite }) => initFlowbite())
+        document.documentElement.lang = 'zh'
 
         if (isDevEnv) {
             ToastLogger.info('You are running MohistMC in development mode.')

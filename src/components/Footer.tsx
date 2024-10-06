@@ -144,8 +144,8 @@ export default function Footer() {
                             href="https://beian.miit.gov.cn"
                             className="hover:underline md:dark:hover:text-gray-500"
                         >
-                            {' 桐乡市墨孤蓝网络科技有限公司版权所有 '}
-                            浙ICP备2024124748号
+                            {' 桐乡市墨孤蓝网络科技有限公司 '}
+                            浙ICP备2024124748号-1
                         </Link>
                     </span>
                     <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">

@@ -255,7 +255,7 @@ const zhTranslation = {
         'vault.format.mohth': '￥',
         'subscription.page.title': '墨孤蓝网络科技 - 订阅',
         'subscription.title': '定价计划',
-        'subscription.subtitle': '帐户计划可解锁其他功能',
+        'subscription.subtitle': '仅供参考不代表最终结果',
         'subscription.items.free': '铲',
         'subscription.items.vip': '稿',
         'subscription.items.svip': '斧',
@@ -271,7 +271,10 @@ const zhTranslation = {
         'table.page.2': '共',
         'toast.docsNotAvailableInSelectedLocale':
             '抱歉，此文档不支持您选择的语言。',
-        'mcserver.page.title': '墨孤蓝网络科技 - 服务器列表',
+        'tools.subscription': '工具',
+        'tools.page.title': '墨孤蓝网络科技 - 服务器列表',
+        'tools.title': '%MohistMC%常用工具',
+        'tools.subtitle': '日常开发和工作会用到的一些工具'
     },
 }
 

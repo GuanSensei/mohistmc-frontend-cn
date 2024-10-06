@@ -1,5 +1,3 @@
-
-
 const meta = {
     '*': {
         type: 'page',
@@ -26,4 +24,4 @@ const meta = {
     },
 }
 
-export default meta;
+export default meta

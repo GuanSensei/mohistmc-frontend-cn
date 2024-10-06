@@ -5,4 +5,4 @@ const meta = {
     callbukkitfromforge: '从 Forge 调用 Bukkit',
 }
 
-export default meta;
+export default meta

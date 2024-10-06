@@ -5,4 +5,4 @@ const meta = {
     },
 }
 
-export default meta;
+export default meta

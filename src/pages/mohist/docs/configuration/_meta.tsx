@@ -3,4 +3,4 @@ const meta = {
     'worlds.yml': 'worlds.yml',
 }
 
-export default meta;
+export default meta

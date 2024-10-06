@@ -8,4 +8,4 @@ const meta = {
     developers: '开发指导',
 }
 
-export default meta;
+export default meta

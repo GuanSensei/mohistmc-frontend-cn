@@ -15,7 +15,7 @@
         "classnames": "^2.5.1",
         "cookies-next": "^4.2.1",
         "flexsearch": "^0.7.43",
-        "flowbite-react": "^0.8.0",
+        "flowbite-react": "^0.10.2",
         "next": "14.2.14",
         "next-redux-wrapper": "^8.1.0",
         "nextra": "^3.0.3",

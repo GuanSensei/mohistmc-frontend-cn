@@ -3,7 +3,6 @@ const meta = {
         title: 'Docs',
         display: 'children',
     },
-};
+}
 
-export default meta;
-
+export default meta

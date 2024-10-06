@@ -5,4 +5,4 @@ const meta = {
     patches: '生成补丁',
 }
 
-export default meta;
+export default meta

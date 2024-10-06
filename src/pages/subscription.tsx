@@ -25,7 +25,7 @@ const Shop = () => {
                                 {strings['subscription.title']}
                             </span>
                         </h1>
-                        <p className="mb-5 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">
+                        <p className="mb-5 text-lg font-normal text-red-600 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-300">
                             {strings['subscription.subtitle']}
                         </p>
                     </div>

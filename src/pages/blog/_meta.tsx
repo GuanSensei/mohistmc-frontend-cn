@@ -11,4 +11,4 @@ const meta = {
     test: 'Test article MohistMC',
 }
 
-export default meta;
+export default meta

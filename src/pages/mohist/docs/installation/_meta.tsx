@@ -3,4 +3,4 @@ const meta = {
     linux: 'Linux',
 }
 
-export default meta;
+export default meta
