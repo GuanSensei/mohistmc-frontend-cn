@@ -192,7 +192,7 @@ const zhTranslation = {
             'MohistMC制作开源项目，由社区贡献推动。您可以通过多种方式参与塑造这些项目。',
         'contribute.cards.finance.title': '财务贡献',
         'contribute.cards.finance.desc':
-            'MohistMC是一个非营利组织。我们依靠捐款来资助我们的运营，继续开发我们的项目并维护我们的基础设施。您的贡献将帮助我们继续为社区提供服务。',
+            'MohistMC是一个开源组织。开源不易，您的贡献将帮助我们继续为社区提供服务。',
         'contribute.cards.github.title': '贡献代码',
         'contribute.cards.github.desc':
             'MohistMC制作开源项目！我们欢迎社区的贡献。您可以通过在GitHub上提交拉取请求或报告问题来为我们的项目做出贡献。',
@@ -274,7 +274,7 @@ const zhTranslation = {
         'tools.subscription': '工具',
         'tools.page.title': '墨孤蓝网络科技 - 服务器列表',
         'tools.title': '%MohistMC%常用工具',
-        'tools.subtitle': '日常开发和工作会用到的一些工具'
+        'tools.subtitle': '日常开发和工作会用到的一些工具',
     },
 }
 

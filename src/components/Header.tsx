@@ -11,9 +11,9 @@ import { useAppSelector } from '@/util/redux/Hooks'
 import { selectUser } from '@/features/user/UserSlice'
 import Image from 'next/image'
 import mohistLogo from '../../public/mohistLogo.webp'
-import { isDevEnv } from '@/util/Environment'
 import { FaGithub, FaQq } from 'react-icons/fa'
 import { FaBilibili } from 'react-icons/fa6'
+import { Button } from 'flowbite-react'
 
 export default function Header() {
     const dispatch = useDispatch()

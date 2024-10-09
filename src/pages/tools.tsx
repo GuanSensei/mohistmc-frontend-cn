@@ -6,7 +6,7 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import Head from 'next/head'
 import { Flowbite } from 'flowbite-react'
 import { customTheme } from '@/util/Theme'
-import MotdList from '@/components/tools/Motd'
+import MotdList from '@/components/tools/Tools'
 import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
 
 export default function Tools() {
