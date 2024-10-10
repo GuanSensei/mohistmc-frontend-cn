@@ -272,9 +272,13 @@ const zhTranslation = {
         'toast.docsNotAvailableInSelectedLocale':
             '抱歉，此文档不支持您选择的语言。',
         'tools.subscription': '工具',
-        'tools.page.title': '墨孤蓝网络科技 - 服务器列表',
+        'tools.page.title': '墨孤蓝网络科技 - 工具',
         'tools.title': '%MohistMC%常用工具',
         'tools.subtitle': '日常开发和工作会用到的一些工具',
+        'servers.subscription': '服务器',
+        'servers.page.title': '墨孤蓝网络科技 - 服务器列表',
+        'servers.title': '%服务器% 列表',
+        'servers.subtitle': '多元化',
     },
 }
 

@@ -11,7 +11,7 @@ const meta = {
         },
     },
     blog: {
-        title: 'Blog',
+        title: '博客',
         theme: {
             typesetting: 'article',
         },

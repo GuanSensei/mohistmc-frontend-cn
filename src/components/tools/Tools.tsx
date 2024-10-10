@@ -1,10 +1,10 @@
 import React from 'react'
-import { Card } from 'flowbite-react'
+import { Card, Avatar } from 'flowbite-react'
 
 const motdList = [
     {
         name: 'Minecraft',
-        text: 'Minecraft我的世界官方网站',
+        text: 'Minecraft官方网站',
         img: 'img/tools/minecraft.png',
         link: 'https://www.minecraft.net/',
     },
@@ -40,7 +40,7 @@ const motdList = [
     },
     {
         name: 'Blockbench',
-        text: 'Minecraft建模常用软件',
+        text: '常用Minecraft建模软件',
         img: 'img/tools/blockbench_logo.png',
         link: 'https://www.blockbench.net/',
     },
@@ -49,6 +49,18 @@ const motdList = [
         text: '前端UI组件库',
         img: 'img/tools/flowbite-react.svg',
         link: 'https://flowbite-react.com/',
+    },
+    {
+        name: 'Beyond Compare 4',
+        text: '文本文件对比工具',
+        img: 'img/tools/bc_icon.png',
+        link: 'https://www.scootersoftware.com/',
+    },
+    {
+        name: 'GitHub Desktop',
+        text: 'Git 图形化桌面应用',
+        img: 'img/tools/github-desktop.png',
+        link: 'https://github.com/apps/desktop',
     },
 ]
 

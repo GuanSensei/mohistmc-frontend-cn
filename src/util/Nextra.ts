@@ -7,7 +7,7 @@ export const hackNextra = () => {
             document.getElementsByClassName('nextra-hamburger')[0]
         const paragraphElement = document.createElement('p')
         paragraphElement.classList.add('mr-3')
-        paragraphElement.innerHTML = 'Docs menu'
+        paragraphElement.innerHTML = '菜单'
 
         // Check it doesn't already contain any paragraph element (by default it contains one svg)
         if (hamburgerMenu?.children.length === 1)

@@ -8,7 +8,7 @@ const meta = {
             typesetting: 'article',
         },
     },
-    test: 'Test article MohistMC',
+    '01': '网站更新日志',
 }
 
 export default meta
