@@ -1,15 +1,15 @@
 export type AuthorList = {
+    id: string
     name: string
-    pageUrl: string
 }
 
-export default function CommunityTeamCard({ pageUrl }: AuthorList) {
+export default function CommunityTeamCard({ id }: AuthorList) {
     return (
         <div className="flex flex-wrap gap-4">
-            <a href={pageUrl}>
+            <a href={`https://github.com/${id}`}>
                 <img
                     className={`w-20 h-20 rounded-full`}
-                    src={pageUrl + `.png`}
+                    src={`https://github.com/${id}.png`}
                     alt={`Rounded avatar`}
                 />
             </a>

@@ -1,17 +1,17 @@
-{
-    "mgazul": {
+[
+    {
+        "id": "Mgazul",
         "name": "Mgazul",
-        "role": "Admin & Developer",
-        "pageUrl": "https://github.com/Mgazul"
+        "role": "Admin & Developer"
     },
-    "shawiizz": {
+    {
+        "id": "Shawiizz",
         "name": "Shawiiz_z",
-        "role": "Admin & Developer",
-        "pageUrl": "https://github.com/Shawiizz"
+        "role": "Admin & Developer"
     },
-    "wdog5": {
+    {
+        "id": "wdog5",
         "name": "Wdog5",
-        "role": "Banner Developer",
-        "pageUrl": "https://github.com/wdog5"
+        "role": "Banner Developer"
     }
-}
+]

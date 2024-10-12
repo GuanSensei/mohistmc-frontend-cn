@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card } from 'flowbite-react'
 
-const motdList = [
-    {
-        name: '小茉莉 · Little Jasmine',
-        text: '1.21.1 原版趣味生存',
-        img: 'img/servers/xiaomoli.png',
-        link: 'https://lj.mohistmc.cn/',
-    },
-    {
-        name: 'Mohist - 1.21.1 测试服',
-        text: '非生产服务器，仅供核心测试',
-        img: 'mohistLogo.png',
-        link: 'https://www.mohistmc.cn/',
-    },
-]
+interface List {
+    name: string
+    text: string
+    img: string
+    link: string
+}
 
-const MotdList = () => {
+const ServerList: React.FC = () => {
+    const [motdList, setMotdList] = useState<List[]>([])
+
+    useEffect(() => {
+        const fetchMotdList = async () => {
+            try {
+                const response = await fetch('/json/mc_servers.json')
+                const data = await response.json()
+                setMotdList(data)
+            } catch (error) {
+                console.error('Error fetching MOTD list:', error)
+            }
+        }
+
+        fetchMotdList()
+    }, [])
+
     return (
         <div className="flex flex-col items-center">
             <div className="grid md:grid-cols-4 gap-3 flex-wrap justify-center items-center">
@@ -51,4 +59,4 @@ const MotdList = () => {
     )
 }
 
-export default MotdList
+export default ServerList

@@ -212,7 +212,7 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-red-600 dark:text-white">
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-red-600">
                             Youer
                         </h2>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">

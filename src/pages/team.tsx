@@ -90,8 +90,8 @@ const Team: React.FC = () => {
                 {Object.values(communityTeamData).map((author) => (
                     <CommunityTeamCard
                         key={author.name}
+                        id={author.id}
                         name={author.name}
-                        pageUrl={author.pageUrl}
                     />
                 ))}
             </div>

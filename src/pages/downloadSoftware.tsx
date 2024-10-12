@@ -183,18 +183,23 @@ export default function DownloadSoftware() {
                     </div>
                     <div className="ml-3 text-sm font-normal">
                         <span className={'font-bold'}>
-                            Do NOT ask for help in Spigot, PaperMC or Forge
-                            forums.
+                            不要在 Spigot、PaperMC 或 Forge 的论坛中寻求帮助.
                         </span>{' '}
-                        They are not related to Mohist and will not help you. If
-                        you have any issue, please use our{' '}
+                        他们与MohistMC无关，不会帮助你。如果您有任何问题,
+                        请使用我们的{' '}
                         <a
-                            href="https://discord.gg/mohistmc"
+                            href="https://qm.qq.com/q/7onbAp4PUQ"
                             className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
                         >
-                            Discord server
+                            QQ群
                         </a>
-                        .
+                        或者
+                        <a
+                            href="https://github.com/MohistMC/Mohist/issues"
+                            className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
+                        >
+                            Github
+                        </a>
                     </div>
                     <Toast.Toggle />
                 </Toast>
