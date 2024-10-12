@@ -1,3 +1,5 @@
+import { GitHubLink } from '@/util/LinkUtil';
+
 export type AuthorList = {
     id: string
     name: string
@@ -6,10 +8,10 @@ export type AuthorList = {
 export default function CommunityTeamCard({ id }: AuthorList) {
     return (
         <div className="flex flex-wrap gap-4">
-            <a href={`https://github.com/${id}`}>
+            <a href={GitHubLink.as(id)}>
                 <img
                     className={`w-20 h-20 rounded-full`}
-                    src={`https://github.com/${id}.png`}
+                    src={GitHubLink.asPng(id)}
                     alt={`Rounded avatar`}
                 />
             </a>

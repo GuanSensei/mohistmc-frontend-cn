@@ -1,5 +1,6 @@
 import { AuthorList } from '@/components/team/CommunityTeamCard'
 import ProfileImage from '@/components/ProfileImage'
+import { GitHubLink } from '@/util/LinkUtil'
 
 export const BlogAvatar = ({ id, name }: AuthorList) => (
     <div className="flex items-center flex-shrink-0 md:justify-start">
@@ -11,7 +12,7 @@ export const BlogAvatar = ({ id, name }: AuthorList) => (
             <dt className="sr-only">GitHub</dt>
             <dd>
                 <a
-                    href={`https://github.com/${id}`}
+                    href={GitHubLink.as(id)}
                     className="text-xs text-blue-500 no-underline betterhover:hover:text-blue-600 betterhover:hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
