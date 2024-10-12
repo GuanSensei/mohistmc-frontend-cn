@@ -1,4 +1,4 @@
-import { GitHubLink } from '@/util/LinkUtil';
+import { GitHubLink } from '@/util/LinkUtil'
 
 export type AuthorList = {
     id: string

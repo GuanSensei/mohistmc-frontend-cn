@@ -135,8 +135,8 @@ export default function BuildDetailsModal({
                             <div className="flex items-center space-x-4">
                                 {commitAuthor && (
                                     <ProfileImage
+                                        id={commitAuthor}
                                         name={commitAuthor}
-                                        githubUrl={`https://github.com/${commitAuthor}`}
                                         size={14}
                                     />
                                 )}
