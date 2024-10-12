@@ -19,8 +19,8 @@ const config: DocsThemeConfig = {
         const section = router?.pathname.startsWith('/mohist')
             ? 'Mohist'
             : router?.pathname.startsWith('/blog')
-                ? '博客'
-                : 'Banner'
+              ? '博客'
+              : 'Banner'
         const description =
             section === '博客'
                 ? `Stay updated with MohistMC's Blog! Explore the latest news, releases, and insights. Connect with our dynamic community. ${getCopyrightText()} MohistMC.`

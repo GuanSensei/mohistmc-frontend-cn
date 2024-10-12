@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import {
     HiDocumentReport,
+    HiIdentification,
     HiLogout,
-    HiUserRemove,
     HiViewGrid,
+    HiCog,
 } from 'react-icons/hi'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
@@ -43,10 +44,14 @@ const UserDropdown = () => {
                 <Dropdown.Header>
                     <span className="block text-sm">{user.username}</span>
                     <span className="block truncate text-sm font-medium">
-                        {strings['loginmodal.logged.via']} +{' '}
+                        {strings['loginmodal.logged.via']}{' '}
                         {user.loggedVia === 'github' ? 'GitHub' : 'Discord'}
                     </span>
                 </Dropdown.Header>
+                <Dropdown.Item>
+                    <HiIdentification className="mr-2" />
+                    个人中心
+                </Dropdown.Item>
                 <Dropdown.Item>
                     <HiDocumentReport className="mr-2" />
                     {strings['report.issue.title']}
@@ -55,16 +60,15 @@ const UserDropdown = () => {
                     <HiViewGrid className="mr-2" />
                     {strings['report.issue.manage']}
                 </Dropdown.Item>
+                <Dropdown.Item>
+                    <HiCog className="mr-2" />
+                    设置
+                </Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={signOut}>
                     <HiLogout className="mr-2" />
-                    {strings['loginmodal.logged.signout']}
-                </Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item>
-                    <HiUserRemove className="mr-2" />
                     <span className="font-medium text-red-600 dark:text-red-400">
-                        {strings['loginmodal.user.delete']}
+                        {strings['loginmodal.logged.signout']}
                     </span>
                 </Dropdown.Item>
             </Dropdown>

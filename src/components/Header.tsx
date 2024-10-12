@@ -20,9 +20,6 @@ export default function Header() {
     const router = useRouter()
 
     // React state
-    const [localesElementState, setLocalesElementState] = useState<
-        ReactElement[]
-    >([])
     const [menuVisibilityState, setMenuVisibilityState] =
         useState<boolean>(false)
     const [openIssueModal, setOpenIssueModal] = useState<string | undefined>()
@@ -44,9 +41,14 @@ export default function Header() {
         return (
             <div className={rootCss}>
                 {user.isLogged && <UserDropdown />}
-                {/*!user.isLogged && <Button className={buttonCss} onClick={() => setOpenIssueModal('dismissible')}>
-                    Report an issue
-                </Button>*/}
+                {!user.isLogged && (
+                    <Button
+                        className={buttonCss}
+                        onClick={() => setOpenLoginModal('dismissible')}
+                    >
+                        登录
+                    </Button>
+                )}
             </div>
         )
     }
@@ -198,6 +200,14 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
+                                href="/resources"
+                                className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'resources' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
+                            >
+                                {strings['button.resources']}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
                                 href="/blog"
                                 className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'blog' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
                             >
@@ -237,14 +247,6 @@ export default function Header() {
                             </Link>
                         </li>
                         {AccountButtons('md:hidden', 'ml-2 mt-1 mb-2')}
-                        <div
-                            className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-dark-100"
-                            id="language-dropdown-menu"
-                        >
-                            <ul className="py-2 font-medium" role="none">
-                                {localesElementState}
-                            </ul>
-                        </div>
                     </ul>
                 </div>
             </div>

@@ -11,6 +11,7 @@
 ![nextra](https://img.shields.io/badge/nextra-FF6A6A?style=for-the-badge&logo=nextra&logoColor=white)
 ![flowbite](https://img.shields.io/badge/flowbite-FFFA5A?style=for-the-badge&logo=flowbite&logoColor=white)
 ![License](https://img.shields.io/github/license/MohistMC/Website?style=for-the-badge)
+![Heroicons](https://img.shields.io/badge/Heroicons-FF6A6A?style=for-the-badge&logo=Heroicons&logoColor=white)
 
 </div>
 

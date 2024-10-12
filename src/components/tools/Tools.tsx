@@ -1,70 +1,30 @@
-import React from 'react'
-import { Card, Avatar } from 'flowbite-react'
+import React, { useEffect, useState } from 'react';
+import { Card } from 'flowbite-react'
 
-const motdList = [
-    {
-        name: 'Minecraft',
-        text: 'Minecraft官方网站',
-        img: 'img/tools/minecraft.png',
-        link: 'https://www.minecraft.net/',
-    },
-    {
-        name: '网易我的世界',
-        text: '网易我的世界官网',
-        img: 'img/tools/chinamc.jpg',
-        link: 'https://mc.163.com/',
-    },
-    {
-        name: 'IntelliJ IDEA',
-        text: 'IntelliJ IDEA 官网',
-        img: 'img/tools/IntelliJ_IDEA.png',
-        link: 'https://www.jetbrains.com/idea/',
-    },
-    {
-        name: 'Gradle',
-        text: 'Java 构建工具',
-        img: 'img/tools/GRADLE_RGB.png',
-        link: 'https://gradle.org/',
-    },
-    {
-        name: 'YourKit',
-        text: 'Java 监控工具',
-        img: 'img/tools/yourkit.png',
-        link: 'https://www.yourkit.com/',
-    },
-    {
-        name: 'Modrinth',
-        text: '海外Minecraft资源站',
-        img: 'img/tools/modrinth.png',
-        link: 'https://modrinth.com/',
-    },
-    {
-        name: 'Blockbench',
-        text: '常用Minecraft建模软件',
-        img: 'img/tools/blockbench_logo.png',
-        link: 'https://www.blockbench.net/',
-    },
-    {
-        name: 'Flowbite-React',
-        text: '前端UI组件库',
-        img: 'img/tools/flowbite-react.svg',
-        link: 'https://flowbite-react.com/',
-    },
-    {
-        name: 'Beyond Compare 4',
-        text: '文本文件对比工具',
-        img: 'img/tools/bc_icon.png',
-        link: 'https://www.scootersoftware.com/',
-    },
-    {
-        name: 'GitHub Desktop',
-        text: 'Git 图形化桌面应用',
-        img: 'img/tools/github-desktop.png',
-        link: 'https://github.com/apps/desktop',
-    },
-]
+interface Tool {
+    name: string;
+    text: string;
+    img: string;
+    link: string;
+}
 
-const MotdList = () => {
+const MotdList: React.FC = () => {
+    const [motdList, setMotdList] = useState<Tool[]>([]);
+
+    useEffect(() => {
+        const fetchMotdList = async () => {
+            try {
+                const response = await fetch('/json/tools.json');
+                const data = await response.json();
+                setMotdList(data);
+            } catch (error) {
+                console.error('Error fetching MOTD list:', error);
+            }
+        };
+
+        fetchMotdList();
+    }, []);
+
     return (
         <div className="flex flex-col items-center">
             <div className="grid md:grid-cols-4 gap-3 flex-wrap justify-center items-center">

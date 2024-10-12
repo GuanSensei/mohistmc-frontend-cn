@@ -1,4 +1,8 @@
-import { AuthorList } from '@/util/content/CommunityTeam'
+
+export type AuthorList = {
+    name: string;
+    pageUrl: string;
+}
 
 export default function CommunityTeamCard({ pageUrl }: AuthorList) {
     return (

@@ -1,16 +1,42 @@
-import TeamCard from '@/components/team/TeamCard'
-import CommunityTeamCard from '@/components/team/CommunityTeamCard'
+
+import CommunityTeamCard, { AuthorList } from '@/components/team/CommunityTeamCard'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
-import MOHISTMC_TEAM from '@/util/content/Team'
-import COMMUNITYTEAM from '@/util/content/CommunityTeam'
 import Head from 'next/head'
 import { getCopyrightText } from '@/util/String'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import TeamCard, { AuthorDetails } from '@/components/team/TeamCard'
 
-export default function Team() {
+interface TeamData {
+    [key: string]: AuthorDetails;
+}
+
+interface CommunityTeamData {
+    [key: string]: AuthorList;
+}
+
+const Team: React.FC = () => {
+    const [teamData, setTeamData] = useState<TeamData>({});
+    const [communityTeamData, setCommunityTeamData] = useState<CommunityTeamData>({});
     const strings = useAppSelector(selectTranslations)
+
+    useEffect(() => {
+        const fetchTeamData = async () => {
+            try {
+                const response = await fetch('/json/mohistmc_team.json');
+                const data = await response.json();
+                const response_ = await fetch('/json/community_team.json');
+                const data_ = await response_.json();
+                setTeamData(data);
+                setCommunityTeamData(data_);
+            } catch (error) {
+                console.error('Error fetching team data:', error);
+            }
+        };
+
+        fetchTeamData();
+    }, []);
 
     return (
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
@@ -36,19 +62,6 @@ export default function Team() {
                 <meta property="og:image:type" content="image/png" />
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
-
-                <meta
-                    property="twitter:url"
-                    content="https://mohistmc.com/team"
-                />
-                <meta
-                    property="twitter:title"
-                    content="墨孤蓝网络科技 - Team"
-                />
-                <meta
-                    property="twitter:description"
-                    content={`Meet Our Team! Discover the faces behind MohistMC's innovation. ${getCopyrightText()} MohistMC.`}
-                />
             </Head>
             <h1 className="md:mt-20 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 {getLocaleStringAsArgs(strings['team.title'])[0]}
@@ -60,13 +73,8 @@ export default function Team() {
             <div
                 className={`flex flex-wrap md:w-full justify-center pt-12 pb-12 gap-7`}
             >
-                {Object.values(MOHISTMC_TEAM).map((teamMember) => (
-                    <TeamCard
-                        key={teamMember.name}
-                        name={teamMember.name}
-                        role={teamMember.role}
-                        pageUrl={teamMember.pageUrl}
-                    />
+                {Object.values(teamData).map((author) => (
+                    <TeamCard key={author.name} {...author} />
                 ))}
             </div>
 
@@ -77,14 +85,14 @@ export default function Team() {
             <div
                 className={`flex flex-wrap md:w-full justify-center pt-12 pb-12 gap-1`}
             >
-                {Object.values(COMMUNITYTEAM).map((teamMember) => (
-                    <CommunityTeamCard
-                        key={teamMember.name}
-                        name={teamMember.name}
-                        pageUrl={teamMember.pageUrl}
-                    />
+                {Object.values(communityTeamData).map((author) => (
+                    <CommunityTeamCard key={author.name}
+                                       name={author.name}
+                                       pageUrl={author.pageUrl} />
                 ))}
             </div>
         </section>
     )
 }
+
+export default Team;
