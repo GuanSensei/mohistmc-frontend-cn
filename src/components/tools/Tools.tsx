@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { Card } from 'flowbite-react'
 
 interface Tool {
-    name: string;
-    text: string;
-    img: string;
-    link: string;
+    name: string
+    text: string
+    img: string
+    link: string
 }
 
 const MotdList: React.FC = () => {
-    const [motdList, setMotdList] = useState<Tool[]>([]);
+    const [motdList, setMotdList] = useState<Tool[]>([])
 
     useEffect(() => {
         const fetchMotdList = async () => {
             try {
-                const response = await fetch('/json/tools.json');
-                const data = await response.json();
-                setMotdList(data);
+                const response = await fetch('/json/tools.json')
+                const data = await response.json()
+                setMotdList(data)
             } catch (error) {
-                console.error('Error fetching MOTD list:', error);
+                console.error('Error fetching MOTD list:', error)
             }
-        };
+        }
 
-        fetchMotdList();
-    }, []);
+        fetchMotdList()
+    }, [])
 
     return (
         <div className="flex flex-col items-center">

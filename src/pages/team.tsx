@@ -1,5 +1,6 @@
-
-import CommunityTeamCard, { AuthorList } from '@/components/team/CommunityTeamCard'
+import CommunityTeamCard, {
+    AuthorList,
+} from '@/components/team/CommunityTeamCard'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
@@ -9,34 +10,35 @@ import React, { useEffect, useState } from 'react'
 import TeamCard, { AuthorDetails } from '@/components/team/TeamCard'
 
 interface TeamData {
-    [key: string]: AuthorDetails;
+    [key: string]: AuthorDetails
 }
 
 interface CommunityTeamData {
-    [key: string]: AuthorList;
+    [key: string]: AuthorList
 }
 
 const Team: React.FC = () => {
-    const [teamData, setTeamData] = useState<TeamData>({});
-    const [communityTeamData, setCommunityTeamData] = useState<CommunityTeamData>({});
+    const [teamData, setTeamData] = useState<TeamData>({})
+    const [communityTeamData, setCommunityTeamData] =
+        useState<CommunityTeamData>({})
     const strings = useAppSelector(selectTranslations)
 
     useEffect(() => {
         const fetchTeamData = async () => {
             try {
-                const response = await fetch('/json/mohistmc_team.json');
-                const data = await response.json();
-                const response_ = await fetch('/json/community_team.json');
-                const data_ = await response_.json();
-                setTeamData(data);
-                setCommunityTeamData(data_);
+                const response = await fetch('/json/mohistmc_team.json')
+                const data = await response.json()
+                const response_ = await fetch('/json/community_team.json')
+                const data_ = await response_.json()
+                setTeamData(data)
+                setCommunityTeamData(data_)
             } catch (error) {
-                console.error('Error fetching team data:', error);
+                console.error('Error fetching team data:', error)
             }
-        };
+        }
 
-        fetchTeamData();
-    }, []);
+        fetchTeamData()
+    }, [])
 
     return (
         <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-50">
@@ -86,13 +88,15 @@ const Team: React.FC = () => {
                 className={`flex flex-wrap md:w-full justify-center pt-12 pb-12 gap-1`}
             >
                 {Object.values(communityTeamData).map((author) => (
-                    <CommunityTeamCard key={author.name}
-                                       name={author.name}
-                                       pageUrl={author.pageUrl} />
+                    <CommunityTeamCard
+                        key={author.name}
+                        name={author.name}
+                        pageUrl={author.pageUrl}
+                    />
                 ))}
             </div>
         </section>
     )
 }
 
-export default Team;
+export default Team
