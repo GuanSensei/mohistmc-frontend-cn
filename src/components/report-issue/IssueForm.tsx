@@ -9,7 +9,7 @@ import {
     Textarea,
     TextInput,
 } from 'flowbite-react'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import { getAPIEndpoint } from '@/util/Environment'
@@ -46,28 +46,29 @@ const IssueForm = () => {
             })
     }, [product])
 
-    const handleSelectChange = (
-        event: React.ChangeEvent<HTMLSelectElement>,
-    ) => {
-        if (event.target.value && event.target.value.length !== 0)
-            fetch(
-                `${getAPIEndpoint()}/projects/${product}/${event.target.value}/builds`,
-            )
-                .then((res) => res.json())
-                .then((result) => {
-                    if (result?.builds && result?.builds.length !== 0)
-                        setAvailableBuilds(result.builds)
-                })
-                .catch((error) => {
-                    console.error(error)
-                })
-    }
+    const handleSelectChange = useCallback(
+        (event: React.ChangeEvent<HTMLSelectElement>) => {
+            if (event.target.value && event.target.value.length !== 0)
+                fetch(
+                    `${getAPIEndpoint()}/projects/${product}/${event.target.value}/builds`,
+                )
+                    .then((res) => res.json())
+                    .then((result) => {
+                        if (result?.builds && result?.builds.length !== 0)
+                            setAvailableBuilds(result.builds)
+                    })
+                    .catch((error) => {
+                        console.error(error)
+                    })
+        },
+        [product],
+    )
 
     useEffect(() => {
         handleSelectChange({
             target: { value: selectedVersionRef.current?.value },
         } as unknown as React.ChangeEvent<HTMLSelectElement>)
-    }, [availableVersions])
+    }, [availableVersions, handleSelectChange])
 
     useEffect(() => {
         if (availableBuilds.length !== 0) {

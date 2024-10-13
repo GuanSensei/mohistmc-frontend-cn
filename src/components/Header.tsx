@@ -1,5 +1,5 @@
 import ThemeSwitcher from '@/components/ThemeSwitcher'
-import { ReactElement, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'

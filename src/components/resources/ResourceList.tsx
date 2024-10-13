@@ -1,5 +1,5 @@
 // ResourceList.tsx
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ResourceItem from './ResourceItem'
 
 interface Resource {

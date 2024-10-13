@@ -8,7 +8,7 @@ import { customTheme } from '@/util/Theme'
 import { Button, Flowbite, Popover } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
-import { FaAlipay } from 'react-icons/fa'
+import { FaAlipay, FaQq } from 'react-icons/fa'
 import { SiGithubsponsors } from 'react-icons/si'
 import { BsOpencollective } from 'react-icons/bs'
 
@@ -46,9 +46,15 @@ const Sponsor = () => {
             })
     }, [])
 
-    const content = (
+    const alipay = (
         <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
             <img height="1680" alt="alipay" src="/alipay.jpg" />
+        </div>
+    )
+
+    const qqpay = (
+        <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
+            <img height="1080" alt="alipay" src="/qqpay.png" />
         </div>
     )
 
@@ -83,19 +89,6 @@ const Sponsor = () => {
                     <meta property="og:image:type" content="image/png" />
                     <meta property="og:image:width" content="100" />
                     <meta property="og:image:height" content="100" />
-
-                    <meta
-                        property="twitter:url"
-                        content="https://mohistmc.com/sponsor"
-                    />
-                    <meta
-                        property="twitter:title"
-                        content="墨孤蓝网络科技 - Sponsor"
-                    />
-                    <meta
-                        property="twitter:description"
-                        content="Elevate Minecraft Servers & Tools with MohistMC. Donate now to shape the future of Minecraft!"
-                    />
                 </Head>
                 <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                     <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">
@@ -130,11 +123,18 @@ const Sponsor = () => {
                                 <span className="ml-2" />
                                 {strings['social.ghsponsors']}
                             </Button>
-                            <Popover content={content} trigger="click">
+                            <Popover content={alipay} trigger="click">
                                 <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                                     <FaAlipay className="w-5 h-5" />
                                     <span className="ml-2" />
                                     {strings['social.alipay']}
+                                </Button>
+                            </Popover>
+                            <Popover content={qqpay} trigger="click">
+                                <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                                    <FaQq className="w-5 h-5" />
+                                    <span className="ml-2" />
+                                    QQ支付
                                 </Button>
                             </Popover>
                         </div>

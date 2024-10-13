@@ -42,7 +42,7 @@ export default function Custom404() {
                 )
                 .catch()
         }
-    }, [])
+    }, [router])
 
     return (
         <section className="flex flex-col justify-center items-center bg-white dark:bg-dark-50 h-full py-20">

@@ -79,14 +79,6 @@ export default function Footer() {
                             <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
                                     <Link
-                                        href="#"
-                                        className="md:hover:text-blue-500 "
-                                    >
-                                        {strings['footer.heading.discover']}
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
                                         href="/sponsor"
                                         className="md:hover:text-blue-500"
                                     >

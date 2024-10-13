@@ -3,11 +3,11 @@ import React, { ReactElement, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import {
+    HiCog,
     HiDocumentReport,
     HiIdentification,
     HiLogout,
     HiViewGrid,
-    HiCog,
 } from 'react-icons/hi'
 import { useAppSelector } from '@/util/redux/Hooks'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'

@@ -11,7 +11,6 @@ import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
 
 export default function Tools() {
     const strings = useAppSelector(selectTranslations)
-
     // Redux
     const mode = useSelector(selectTheme)
 

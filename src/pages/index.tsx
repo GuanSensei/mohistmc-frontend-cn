@@ -7,7 +7,7 @@ import Head from 'next/head'
 import { getCopyrightText } from '@/util/String'
 import { useRouter } from 'next/router'
 import { deleteCookie, getCookie, setCookie } from 'cookies-next'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ChoiceIssueModal from '@/components/modals/ChoiceIssueModal'
 import { useDispatch } from 'react-redux'
 import { loginUserAsync, selectUser, setState } from '@/features/user/UserSlice'
@@ -103,6 +103,27 @@ const Home = () => {
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
                         {strings['index.head.subtitle']}
                     </p>
+                    <div className="mb-6">
+                        <div className="ml-3 text-sm font-normal text-orange-500">
+                            <span className={'font-bold'}>
+                                我们正在招募志同道合的投资伙伴，共赴成功的旅程。邀请您成为我们背后的力量，共同书写成功故事。
+                            </span>{' '}
+                            可前往群内
+                            <a
+                                href="https://qm.qq.com/q/7onbAp4PUQ"
+                                className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
+                            >
+                                QQ群
+                            </a>{' '}
+                            联系群主 或者 发送
+                            <a
+                                href={`mailto:mohistmc@163.com`}
+                                className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
+                            >
+                                邮件
+                            </a>
+                        </div>
+                    </div>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link
                             href="/downloads"
