@@ -134,7 +134,7 @@ export default function DownloadSoftware() {
         }
 
         selectedVersion && handleVersionChanged().catch()
-    }, [project, router, selectedVersion])
+    }, [selectedVersion])
 
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">

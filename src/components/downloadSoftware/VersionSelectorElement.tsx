@@ -62,7 +62,7 @@ export default function VersionSelectorElement({
             fetchSources().catch((e) => {
                 // TODO: Toast error
             })
-    }, [router.query, selectedVersion, setSelectedVersion, software])
+    }, [software])
 
     return (
         <Dropdown label={selectedVersion ?? 'Loading'} dismissOnClick={true}>

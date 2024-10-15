@@ -38,7 +38,12 @@ const UserDropdown = () => {
             <Dropdown
                 inline
                 label={
-                    <Avatar alt="User settings" img={user.avatarUrl} rounded />
+                    <Avatar
+                        alt="User settings"
+                        img={user.avatarUrl}
+                        rounded
+                        className="rounded-full transition-transform transform hover:rotate-180"
+                    />
                 }
             >
                 <Dropdown.Header>

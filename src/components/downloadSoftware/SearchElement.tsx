@@ -140,7 +140,7 @@ export default function SearchElement({
                 } as ChangeEvent<HTMLInputElement>).catch()
             }
         }
-    }, [originalBuildPages, router.isReady, router.query])
+    }, [originalBuildPages])
 
     /**
      * Tell to the user that he still have filters on if he changes the version.
@@ -148,7 +148,7 @@ export default function SearchElement({
     useEffect(() => {
         if (searchInputRef.current && searchInputRef.current.value.length)
             ToastLogger.info(strings['toast.filters.enabled'])
-    }, [selectedVersion, strings])
+    }, [selectedVersion])
 
     /**
      * On search change, update the URL.
@@ -258,21 +258,7 @@ export default function SearchElement({
                     { shallow: true },
                 )
         }
-    }, [
-        exactMatchChecked,
-        filters.buildDate,
-        filters.buildMd5,
-        filters.buildName,
-        filters.buildNumber,
-        filters.loaderVersion,
-        originalBuildPages,
-        perPage,
-        router,
-        search,
-        setCurrentPage,
-        setNoResult,
-        setViewedBuildPages,
-    ])
+    }, [search])
 
     return (
         <div

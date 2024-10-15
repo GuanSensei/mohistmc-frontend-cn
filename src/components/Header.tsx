@@ -1,7 +1,7 @@
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import { useEffect, useState } from 'react'
 import { selectTranslations } from '@/features/i18n/TranslatorSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import UserDropdown from '@/components/header/UserDropdown'
@@ -16,7 +16,6 @@ import { FaBilibili } from 'react-icons/fa6'
 import { Button } from 'flowbite-react'
 
 export default function Header() {
-    const dispatch = useDispatch()
     const router = useRouter()
 
     // React state

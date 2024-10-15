@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Card } from 'flowbite-react'
 
 interface Tool {
     name: string
@@ -22,37 +21,35 @@ const MotdList: React.FC = () => {
             }
         }
 
-        fetchMotdList()
+        fetchMotdList().then(() => '{}')
     }, [])
 
     return (
         <div className="flex flex-col items-center">
             <div className="grid md:grid-cols-4 gap-3 flex-wrap justify-center items-center">
                 {motdList.map((motd, index) => (
-                    <Card
+                    <div
                         key={index}
-                        renderImage={() => (
-                            <a href={motd.link}>
-                                <img
-                                    width={50}
-                                    height={50}
-                                    src={motd.img}
-                                    alt=""
-                                    className="rounded-full transition-transform transform hover:rotate-180"
-                                />
-                            </a>
-                        )}
-                        className="p-3 bg-white text-white flex items-center rounded-lg shadow-lg
-                                transition-transform transform hover:scale-105"
-                        horizontal
+                        className="flex space-x-4 bg-white dark:bg-dark-100 p-3 items-center rounded-lg shadow-lg max-w-sm transition-transform transform hover:scale-105"
                     >
-                        <span className="font-bold text-lg text-gray-950 dark:text-gray-100">
-                            {motd.name}
-                        </span>
-                        <span className="text-sm text-gray-700 dark:text-gray-300">
-                            {motd.text}
-                        </span>
-                    </Card>
+                        <a href={motd.link}>
+                            <img
+                                width={50}
+                                height={50}
+                                src={motd.img}
+                                alt=""
+                                className="rounded-full transition-transform transform hover:rotate-180"
+                            />
+                        </a>
+                        <div className="flex flex-col">
+                            <span className="font-bold text-lg text-gray-950 dark:text-gray-100">
+                                {motd.name}
+                            </span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">
+                                {motd.text}
+                            </span>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
