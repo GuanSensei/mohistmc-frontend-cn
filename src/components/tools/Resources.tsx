@@ -183,7 +183,7 @@ const ResourcesList: React.FC = () => {
                         <div className="flex-grow">
                             <div className="grid gap-6">
                                 {currentMods.map((mod) => (
-                                    <ProjectCard item={mod} />
+                                    <ProjectCard key={mod.id} item={mod} />
                                 ))}
                             </div>
                         </div>
