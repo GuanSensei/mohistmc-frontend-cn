@@ -31,19 +31,6 @@ export default function Downloads() {
                 <meta property="og:image:type" content="image/png" />
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
-
-                <meta
-                    property="twitter:url"
-                    content="https://mohistmc.com/docs"
-                />
-                <meta
-                    property="twitter:title"
-                    content="墨孤蓝网络科技 - Docs"
-                />
-                <meta
-                    property="twitter:description"
-                    content={`Explore MohistMC's Comprehensive Documentation! Access various guides for our software solutions: Mohist, Banner, and Website API. Elevate your understanding and unleash the potential of our tools. Start your journey today. ${getCopyrightText()} MohistMC.`}
-                />
             </Head>
             <h1 className="mb-4 mt-10 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
                 {strings['docs.title']}

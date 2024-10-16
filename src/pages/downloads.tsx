@@ -44,19 +44,6 @@ export default function Downloads() {
                     <meta property="og:image:type" content="image/png" />
                     <meta property="og:image:width" content="100" />
                     <meta property="og:image:height" content="100" />
-
-                    <meta
-                        property="twitter:url"
-                        content="https://mohistmc.com/downloads"
-                    />
-                    <meta
-                        property="twitter:title"
-                        content="墨孤蓝网络科技 - Downloads"
-                    />
-                    <meta
-                        property="twitter:description"
-                        content={`Unleash Minecraft's full potential with MohistMC! Download our advanced software for an ultimate gaming adventure. Whether Forge or Fabric, our server software integrates Bukkit, Spigot, and Paper APIs seamlessly. Elevate your experience now. ${getCopyrightText()} MohistMC.`}
-                    />
                 </Head>
                 <h1 className="md:mt-20 mt-10 text-center w-3/4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                     {getLocaleStringAsArgs(strings['downloads.title'])[0]}

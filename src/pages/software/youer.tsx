@@ -35,19 +35,6 @@ export default function MohistSoftware() {
                 <meta property="og:image:type" content="image/png" />
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
-
-                <meta
-                    property="twitter:url"
-                    content="https://mohistmc.com/software/youer"
-                />
-                <meta
-                    property="twitter:title"
-                    content="墨孤蓝网络科技 - Youer"
-                />
-                <meta
-                    property="twitter:description"
-                    content={`Elevate your Minecraft server with Mohist! Powerful Forge software with Bukkit, Spigot, Paper APIs. Enjoy smooth gameplay, extensive mod compatibility, and community support. Upgrade to Mohist for limitless possibilities. ${getCopyrightText()} MohistMC.`}
-                />
             </Head>
             <section className="bg-white dark:bg-dark-25 pt-10">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">

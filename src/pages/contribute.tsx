@@ -46,19 +46,6 @@ const Contribute = () => {
                     <meta property="og:image:type" content="image/png" />
                     <meta property="og:image:width" content="100" />
                     <meta property="og:image:height" content="100" />
-
-                    <meta
-                        property="twitter:url"
-                        content="https://mohistmc.com/contribute"
-                    />
-                    <meta
-                        property="twitter:title"
-                        content="墨孤蓝网络科技 - Contribute"
-                    />
-                    <meta
-                        property="twitter:description"
-                        content="Empower Minecraft's future at MohistMC. Support our community's growth for innovation. Contribute now!"
-                    />
                 </Head>
                 <section className="flex flex-col justify-center items-center pt-20 bg-white dark:bg-dark-25">
                     <div className="pt-10 px-4 mx-auto max-w-screen-xl text-center">

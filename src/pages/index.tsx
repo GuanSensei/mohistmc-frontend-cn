@@ -80,16 +80,6 @@ const Home = () => {
                 <meta property="og:image:type" content="image/png" />
                 <meta property="og:image:width" content="100" />
                 <meta property="og:image:height" content="100" />
-
-                <meta property="twitter:url" content="https://mohistmc.com/" />
-                <meta
-                    property="twitter:title"
-                    content="墨孤蓝网络科技 - 主页"
-                />
-                <meta
-                    property="twitter:description"
-                    content={`Explore Minecraft innovation with MohistMC. Discover our hybrid servers software, mods, plugins, and vibrant community. Unleash new gaming dimensions. ${getCopyrightText()} MohistMC.`}
-                />
             </Head>
             <ChoiceIssueModal
                 openIssueModal={openChoiceIssueModal}

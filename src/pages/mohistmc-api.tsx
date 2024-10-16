@@ -59,19 +59,6 @@ export default function MohistMCApi() {
                     <meta property="og:image:type" content="image/png" />
                     <meta property="og:image:width" content="100" />
                     <meta property="og:image:height" content="100" />
-
-                    <meta
-                        property="twitter:url"
-                        content="https://mohistmc.com/mohistmc-api"
-                    />
-                    <meta
-                        property="twitter:title"
-                        content="墨孤蓝网络科技 -JSON API"
-                    />
-                    <meta
-                        property="twitter:description"
-                        content={`Access valuable project data with MohistMC JSON API. Elevate development, connect with creators, and innovate. Join us today! ${getCopyrightText()} MohistMC.`}
-                    />
                 </Head>
                 <NoteToHostsModal
                     openHostModal={openHostModal}
