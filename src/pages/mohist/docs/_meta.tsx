@@ -6,6 +6,7 @@ const meta = {
     commands: '命令列表',
     versions: '版本',
     developers: '开发指导',
+    tutorials: '开服指导',
 }
 
 export default meta
