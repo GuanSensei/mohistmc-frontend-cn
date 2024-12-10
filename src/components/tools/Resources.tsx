@@ -51,7 +51,7 @@ const ResourcesList: React.FC = () => {
 
     return (
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-            <div className="bg-gray-500 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12 mb-8">
+            <div className="bg-gray-100 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12 mb-8">
                 <header className="bg-white dark:bg-dark-100 shadow">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
                         <div className="relative flex-grow max-w-xl">
@@ -69,9 +69,9 @@ const ResourcesList: React.FC = () => {
                         </div>
                         <div className="flex items-center space-x-4 text-gray-950">
                             <div className="flex items-center">
-                            <span className="text-sm text-gray-500 mr-2">
-                                排序方式
-                            </span>
+                                <span className="text-sm text-gray-500 mr-2">
+                                    排序方式
+                                </span>
                                 <select
                                     value={sortBy}
                                     onChange={(e) => setSortBy(e.target.value)}
@@ -85,8 +85,7 @@ const ResourcesList: React.FC = () => {
                         </div>
                     </div>
                 </header>
-                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-gray-950 dark:text-gray-100"
-                      style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-gray-950 dark:text-gray-100">
                     <div className="flex">
                         <aside className="w-64 pr-8">
                             <div className="mb-6">
@@ -180,17 +179,15 @@ const ResourcesList: React.FC = () => {
                             </div>
                             {/* Add more filter sections as needed */}
                         </aside>
-                        <div className="flex-grow">
-                            <div className="grid gap-6">
-                                {currentMods.map((mod) => (
-                                    <ProjectCard key={mod.id} item={mod} />
-                                ))}
-                            </div>
+                        <div className="flex grid gap-6">
+                            {currentMods.map((mod) => (
+                                <ProjectCard key={mod.id} item={mod} />
+                            ))}
                         </div>
                     </div>
                 </main>
                 {/* 分页控件 */}
-                <div className="flex mx-auto justify-end text-gray-950">
+                <div className="flex mx-auto justify-center text-gray-950">
                     <Pagination
                         layout="pagination"
                         currentPage={currentPage}

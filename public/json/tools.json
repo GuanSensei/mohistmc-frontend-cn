@@ -18,6 +18,12 @@
         "link": "https://www.jetbrains.com/idea/"
     },
     {
+        "name": "WebStorm",
+        "text": "WebStorm 官网",
+        "img": "img/tools/WebStorm_icon.png",
+        "link": "https://www.jetbrains.com/webstorm/"
+    },
+    {
         "name": "Gradle",
         "text": "Java 构建工具",
         "img": "img/tools/GRADLE_RGB.png",
@@ -58,5 +64,11 @@
         "text": "Git 图形化桌面应用",
         "img": "img/tools/github-desktop.png",
         "link": "https://github.com/apps/desktop"
+    },
+    {
+        "name": "react-icons",
+        "text": "react 图标集合",
+        "img": "img/tools/react-icons.svg",
+        "link": "https://react-icons.github.io/react-icons/"
     }
 ]

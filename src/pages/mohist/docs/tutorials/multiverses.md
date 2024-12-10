@@ -1,13 +1,14 @@
 ## 如何用 Mohist 拥有多个世界？
 
-⚠️ **免责声明：要在 Mohist 中拥有多个世界，您不能使用 Multiverse 或其他插件替代品，因为它们不能很好地与 forge 和 mod 一起使用。
-### ->在 1.12.2 中创建新世界的步骤： 
+⚠️ \*\*免责声明：要在 Mohist 中拥有多个世界，您不能使用 Multiverse 或其他插件替代品，因为它们不能很好地与 forge 和 mod 一起使用。
 
-* 下载 [这个模组](https://www.curseforge.com/minecraft/mc-mods/just-enough-dimensions) 并将其放入您的 “mods” 文件夹中。
+### ->在 1.12.2 中创建新世界的步骤：
 
-* 启动服务器并在服务器完全加载后停止服务器以生成配置文件。
+-   下载 [这个模组](https://www.curseforge.com/minecraft/mc-mods/just-enough-dimensions) 并将其放入您的 “mods” 文件夹中。
 
-* 要创建一个新的简单世界，您可以使用 [此预设 (dimensions.json)](https://cdn.discordapp.com/attachments/815331146303799296/825439539438157904/dimensions.json), 下载它并放在 “config/justenoughdimensions” 中，然后使用 /tpj 2 传送到这个世界。要创建其他世界，请使用与预设相同的语法并更改维度 ID（您不能为多个维度使用相同的维度 ID）。
+-   启动服务器并在服务器完全加载后停止服务器以生成配置文件。
+
+-   要创建一个新的简单世界，您可以使用 [此预设 (dimensions.json)](https://cdn.discordapp.com/attachments/815331146303799296/825439539438157904/dimensions.json), 下载它并放在 “config/justenoughdimensions” 中，然后使用 /tpj 2 传送到这个世界。要创建其他世界，请使用与预设相同的语法并更改维度 ID（您不能为多个维度使用相同的维度 ID）。
 
 <details>
   <summary>Main options</summary>
@@ -58,11 +59,11 @@ There is other settings that you can set, you can see them in the mod's cursefor
 
 ### -> 在 1.16.5+ 中创建新世界的步骤：
 
-* 下载 [数据包](https://cdn.discordapp.com/attachments/615256015704948808/850816329636380752/multiworld.zip) 并将其解压到 world/datapacks 文件夹中。
+-   下载 [数据包](https://cdn.discordapp.com/attachments/615256015704948808/850816329636380752/multiworld.zip) 并将其解压到 world/datapacks 文件夹中。
 
-* 启动你的服务器并使用命令 /execute in multiworld：altworld-1 run tp ~ ~ ~ 将自己传送到新世界（也可以使用插件命令）。
+-   启动你的服务器并使用命令 /execute in multiworld：altworld-1 run tp ~ ~ ~ 将自己传送到新世界（也可以使用插件命令）。
 
-* 如果你需要更多的世界，你需要复制并粘贴 world/datapacks/multiworld/data/multiworld/dimension 中的.json并重命名它（例如：altworld-3.json）。
+-   如果你需要更多的世界，你需要复制并粘贴 world/datapacks/multiworld/data/multiworld/dimension 中的.json并重命名它（例如：altworld-3.json）。
 
 <details>
   <summary>Datapack Json</summary>

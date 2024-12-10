@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link' // 假设使用Next.js框架
-import { FiClock } from 'react-icons/fi'
+import { HiOutlineRefresh } from 'react-icons/hi'
 
 export type ProjectProps = {
     item: {
@@ -20,14 +20,18 @@ export default function ProjectCard({ item }: ProjectProps) {
     return (
         <div
             key={item.name}
-            className="bg-white rounded-lg p-6 max-w-screen-md"
+            className="bg-white rounded-xl p-6"
+            style={{ display: 'flex' }}
         >
-            <div
-                className={`w-20 h-20 ${item.iconColor} rounded-lg flex items-center justify-center flex-shrink-0`}
-            ></div>
-            <div className="flex-grow min-w-0">
+            <img
+                width={120}
+                src={'img/servers/xiaomoli.png'}
+                alt=""
+                className="rounded-xl mr-4"
+            />
+            <div className="flex-grow">
                 <div className="flex items-start justify-between">
-                    <div className="min-w-0 flex-grow line-clamp-2 max-w-md">
+                    <div className="flex-grow ">
                         <span className="text-xl font-bold text-gray-900 truncate">
                             <Link href={`/resources/${item.id}`}>
                                 {item.name}
@@ -37,14 +41,13 @@ export default function ProjectCard({ item }: ProjectProps) {
                             </span>
                         </span>
 
-                        <p className="mt-2 text-sm text-gray-600">
+                        <p className="mt-2 text-sm text-gray-600 mr-24">
                             {item.description}
                         </p>
                     </div>
                 </div>
-                <Fragment></Fragment>
-                <div className="mt-4 flex items-center justify-between flex-wrap">
-                    <div className="flex flex-wrap gap-2 mb-2">
+                <div className="flex mt-4 items-center justify-between flex-wrap">
+                    <div className="flex flex-wrap gap-2">
                         {item.tags.map((tag, tagIndex) => (
                             <span
                                 key={tagIndex}
@@ -54,11 +57,10 @@ export default function ProjectCard({ item }: ProjectProps) {
                             </span>
                         ))}
                     </div>
-
-                </div>
-                <div className="text-sm text-gray-500 flex items-center">
-                    <FiClock size={16} className="mr-1" />
-                    <span>更新于 {item.lastUpdate}</span>
+                    <div className="text-sm text-gray-500 flex items-center justify-end">
+                        <HiOutlineRefresh size={16} className="mr-1" />
+                        <span>更新于 {item.lastUpdate}</span>
+                    </div>
                 </div>
             </div>
         </div>

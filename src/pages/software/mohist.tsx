@@ -4,6 +4,7 @@ import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { getLocaleStringAsArgs } from '@/util/LocaleHelper'
 import Head from 'next/head'
 import { getCopyrightText } from '@/util/String'
+import { Button } from 'flowbite-react'
 
 export default function MohistSoftware() {
     const strings = useAppSelector(selectTranslations)
@@ -75,6 +76,25 @@ export default function MohistSoftware() {
                             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                         >
                             {strings['button.sourcecode']}
+                        </Link>
+                        <Link
+                            href="https://www.rainyun.com/MohistMC_"
+                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
+                        >
+                            一键开服
+                            <svg
+                                aria-hidden="true"
+                                className="ml-2 -mr-1 w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                ></path>
+                            </svg>
                         </Link>
                     </div>
                 </div>

@@ -13,6 +13,8 @@ const zhTranslation = {
             '一个强大的Mohist Fabric混合服务器软件，实现了Bukkit、Spigot API。',
         'index.cards.youer.description':
             '一个强大的Mohist NeoForge混合服务器软件，实现了Bukkit、Spigot API。',
+        'index.cards.wukong.description':
+            '一个强大的多平台客户端引擎，类似龙核、萌芽、YSM，让你的服务器也会72变, 它是免费开源的。',
         'index.cards.website.description':
             '我们的网站允许任何用户发现我们的软件并轻松免费下载它们!',
         'index.cards.other.description':

@@ -15,7 +15,7 @@ export interface UserState extends User {
 
 const initialState: UserState = {
     username: 'Mgazul',
-    avatarUrl: 'https://github.com/Mgazul.png',
+    avatarUrl: '/mgazul.png',
     loggedVia: 'github',
     isLogged: true,
     serverError: false,
