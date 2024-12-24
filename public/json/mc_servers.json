@@ -1,17 +1,5 @@
 [
     {
-        "name": "小茉莉 · Little Jasmine",
-        "text": "1.21.1 原版趣味生存",
-        "img": "img/servers/xiaomoli.png",
-        "link": "https://lj.mohistmc.cn/"
-    },
-    {
-        "name": "Mohist - 1.21.1 测试服",
-        "text": "非生产服务器，仅供核心测试",
-        "img": "mohistLogo.png",
-        "link": "https://www.mohistmc.cn/"
-    },
-    {
         "name": "听风吟",
         "text": "1.20.1 养老，种植种地，建筑服务器",
         "img": "img/servers/tingfengyin.jpg",
@@ -22,5 +10,11 @@
         "text": "1.20.1|TacZ|末日降临|硬核枪战|搜刮撤离",
         "img": "https://s21.ax1x.com/2024/09/08/pAeyAaR.png",
         "link": "https://play.mcmod.cn/sv20187972.html"
+    },
+    {
+        "name": "MCYG · Pixelmon",
+        "text": "1.20.2寶可夢公益伺服器",
+        "img": "https://mcyg.tw/img/logo.webp",
+        "link": "https://www.mcyg.tw/"
     }
 ]

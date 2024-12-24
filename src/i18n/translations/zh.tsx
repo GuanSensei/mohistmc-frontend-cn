@@ -8,13 +8,13 @@ const zhTranslation = {
             'MohistMC 致力于通过创建独特的混合 Minecraft 软件来突破界限，实现不可能。此外，我们努力维护和增强一些模组和插件，旨在为玩家提供卓越的游戏体验。',
         'index.cards.title': '将您的服务器带到 %下一个级别%',
         'index.cards.mohist.description':
-            '一个强大的Mohist Forge混合服务器软件，实现了Bukkit、Spigot API。',
+            '一个强大的 Forge 混合服务器软件，实现了Bukkit、Spigot API。',
         'index.cards.banner.description':
-            '一个强大的Mohist Fabric混合服务器软件，实现了Bukkit、Spigot API。',
+            '一个强大的 Fabric 混合服务器软件，实现了Bukkit、Spigot API。',
         'index.cards.youer.description':
-            '一个强大的Mohist NeoForge混合服务器软件，实现了Bukkit、Spigot API。',
+            '一个强大的 NeoForge 混合服务器软件，实现了Bukkit、Spigot API。',
         'index.cards.wukong.description':
-            '一个强大的多平台客户端引擎，类似龙核、萌芽、YSM，让你的服务器也会72变, 它是免费开源的。',
+            '一个强大的开源客户端引擎，类似龙核、萌芽、YSM，让你的服务器也会72变。',
         'index.cards.website.description':
             '我们的网站允许任何用户发现我们的软件并轻松免费下载它们!',
         'index.cards.other.description':
