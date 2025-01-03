@@ -283,6 +283,9 @@ const zhTranslation = {
         'servers.title': '%服务器% 列表',
         'servers.subtitle': '多元化',
         'resources.page.title': '墨孤蓝网络科技 - 资源',
+        'resources.subscription': '资源',
+        'resources.title': '%人群中%总有你喜欢的',
+        'resources.subtitle': '自主开发的一些插件和模组',
     },
 }
 
