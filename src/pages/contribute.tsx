@@ -122,7 +122,7 @@ const Contribute = () => {
                         </p>
                         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                             <Link
-                                href="https://qm.qq.com/q/7onbAp4PUQ"
+                                href="https://qm.qq.com/q/N4IqFA1rag"
                                 target="_blank"
                                 className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                             >

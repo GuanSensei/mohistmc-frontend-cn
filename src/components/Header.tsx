@@ -84,7 +84,7 @@ export default function Header() {
                         <FaGithub className="w-6 h-6" />
                     </Link>
                     <Link
-                        href="https://qm.qq.com/q/7onbAp4PUQ"
+                        href="https://qm.qq.com/q/N4IqFA1rag"
                         aria-label="QQ"
                         className="hidden xl:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
                     >
@@ -124,7 +124,6 @@ export default function Header() {
                         </svg>
                     </button>
                     <ThemeSwitcher className={`ml-2`} />
-                    {AccountButtons('hidden md:block', 'ml-3')}
                 </div>
                 <div
                     className={`${!menuVisibilityState ? 'hidden' : ''} w-full md:flex md:w-auto md:order-1`}
@@ -208,6 +207,7 @@ export default function Header() {
                         <li>
                             <Link
                                 href="https://afdian.com/a/MohistMC"
+                                target="_blank"
                                 className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent hover:bg-gray-100 dark:hover:bg-dark-200}`}
                             >
                                 爱发电以及会员服务
@@ -231,10 +231,10 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                href="/contribute"
+                                href="/sponsor"
                                 className={`block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent md:dark:bg-transparent dark:border-gray-700 md:bg-transparent ${pageName === 'contribute' ? `md:text-blue-700 md:dark:text-blue-500 bg-blue-700 text-white` : 'hover:bg-gray-100 dark:hover:bg-dark-200'}`}
                             >
-                                {strings['button.contribute']}
+                                {strings['button.sponsor']}
                             </Link>
                         </li>
                         <li>

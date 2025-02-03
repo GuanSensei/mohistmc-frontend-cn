@@ -29,7 +29,7 @@ const zhTranslation = {
         'button.download': '下载',
         'button.discord': 'Discord',
         'button.github': 'GitHub',
-        'button.sponsor': '赞助',
+        'button.sponsor': '捐赠',
         'button.api': 'API',
         'button.software': '软件',
         'button.learnmore': '了解更多',

@@ -70,5 +70,17 @@
         "text": "react 图标集合",
         "img": "img/tools/react-icons.svg",
         "link": "https://react-icons.github.io/react-icons/"
+    },
+    {
+        "name": "Linkie",
+        "text": "Fabric系列映射表查询",
+        "img": "img/tools/Linkie.png",
+        "link": "https://linkie.shedaniel.dev/"
+    },
+    {
+        "name": "Maven Repository",
+        "text": "mvn中央仓库",
+        "img": "img/tools/mvnrepository.png",
+        "link": "https://mvnrepository.com/"
     }
 ]

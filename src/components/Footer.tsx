@@ -48,14 +48,6 @@ export default function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="/contribute"
-                                        className="md:hover:text-blue-500"
-                                    >
-                                        {strings['button.contribute']}
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
                                         href="/docs"
                                         className="md:hover:text-blue-500"
                                     >
@@ -79,10 +71,10 @@ export default function Footer() {
                             <ul className="text-gray-600 dark:text-gray-400 font-medium">
                                 <li>
                                     <Link
-                                        href="/sponsor"
+                                        href="/contribute"
                                         className="md:hover:text-blue-500"
                                     >
-                                        {strings['button.sponsor']}
+                                        {strings['button.contribute']}
                                     </Link>
                                 </li>
                                 <li>
@@ -91,6 +83,14 @@ export default function Footer() {
                                         className="md:hover:text-blue-500"
                                     >
                                         {strings['button.team']}
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://bstats.org/plugin/server-implementation/Mohist/6762"
+                                        className="md:hover:text-blue-500"
+                                    >
+                                        bStats
                                     </Link>
                                 </li>
                             </ul>
@@ -148,7 +148,7 @@ export default function Footer() {
                             <FaGithub className="w-5 h-5" />
                         </Link>
                         <Link
-                            href="https://qm.qq.com/q/7onbAp4PUQ"
+                            href="https://qm.qq.com/q/N4IqFA1rag"
                             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                         >
                             <FaQq className="w-5 h-5" />

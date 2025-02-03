@@ -1,9 +1,9 @@
 [
     {
         "name": "听风吟",
-        "text": "1.20.1 养老，种植种地，建筑服务器",
+        "text": "1.20.1 养老，种植种地，农夫乐事，建筑服务器",
         "img": "img/servers/tingfengyin.jpg",
-        "link": "https://www.bilibili.com/video/BV1hDYgesELW"
+        "link": "https://tfy.mohistmc.cn/"
     },
     {
         "name": "WarZ-启示录",
@@ -16,5 +16,11 @@
         "text": "1.20.2寶可夢公益伺服器",
         "img": "https://mcyg.tw/img/logo.webp",
         "link": "https://www.mcyg.tw/"
+    },
+    {
+        "name": "Quantum Original 2",
+        "text": "1.21.3 高版本纯生存多元服务器",
+        "img": "img/servers/glowingstone124.jpg",
+        "link": "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=9TY_nXD6KmPyUd6S4mK7yT5OwYHDu3c9&authKey=JjnmADZ3zE5SezzcClM5aeCHQUhQF85VrDAOstH8rq77%2FQaYul5H2rePXMrRediq&noverify=0&group_code=946085440"
     }
 ]

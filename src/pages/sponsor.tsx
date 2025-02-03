@@ -8,8 +8,8 @@ import { customTheme } from '@/util/Theme'
 import { Button, Flowbite, Popover } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
-import { FaAlipay, FaQq } from 'react-icons/fa'
-import { SiGithubsponsors } from 'react-icons/si'
+import { FaAlipay, FaQq, FaWeixin } from 'react-icons/fa'
+import { SiGithubsponsors, SiPatreon } from 'react-icons/si'
 import { BsOpencollective } from 'react-icons/bs'
 
 interface Donor {
@@ -26,7 +26,7 @@ const Sponsor = () => {
 
     // React effect
     useEffect(() => {
-        fetch('https://opencollective.com/mohist/members/all.json')
+        fetch('/json/opencollective.json')
             .then((res) => res.json())
             .then((json) => {
                 const donors = json.map((donor: any) => {
@@ -55,6 +55,12 @@ const Sponsor = () => {
     const qqpay = (
         <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
             <img height="1080" alt="alipay" src="/qqpay.png" />
+        </div>
+    )
+
+    const wxpay = (
+        <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
+            <img height="1080" alt="alipay" src="/wx.png" />
         </div>
     )
 
@@ -108,6 +114,14 @@ const Sponsor = () => {
                         </p>
                         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                             <Button
+                                href="https://www.patreon.com/c/mohistmc"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                <SiPatreon className="w-5 h-5" />
+                                <span className="ml-2" />
+                                Patreon
+                            </Button>
+                            <Button
                                 href="https://opencollective.com/mohist"
                                 className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                             >
@@ -135,6 +149,13 @@ const Sponsor = () => {
                                     <FaQq className="w-5 h-5" />
                                     <span className="ml-2" />
                                     QQ支付
+                                </Button>
+                            </Popover>
+                            <Popover content={wxpay} trigger="click">
+                                <Button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                                    <FaWeixin className="w-5 h-5" />
+                                    <span className="ml-2" />
+                                    微信支付
                                 </Button>
                             </Popover>
                         </div>

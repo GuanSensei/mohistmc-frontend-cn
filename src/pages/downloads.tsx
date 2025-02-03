@@ -142,9 +142,15 @@ export default function Downloads() {
                         <div className="bg-gray-50 dark:bg-dark-100 border border-gray-200 dark:border-dark-200 rounded-lg p-8 md:p-12">
                             <Link
                                 href="https://neoforged.net/"
-                                className="bg-red-200 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-red-400"
+                                className="bg-red-400 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-red-400"
                             >
                                 NeoForge
+                            </Link>
+                            <Link
+                                href=""
+                                className="bg-red-400 text-blue-800 text-xs font-medium items-center px-2.5 py-0.5 ml-2 rounded-md dark:bg-gray-700 dark:text-red-400"
+                            >
+                                暂未发布
                             </Link>
                             <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2 mt-1">
                                 Youer

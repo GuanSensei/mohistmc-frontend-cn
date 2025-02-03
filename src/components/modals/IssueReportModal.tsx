@@ -87,7 +87,7 @@ const IssueReportModal = ({
                         className={`flex flex-row gap-2 justify-center align-center mt-3`}
                     >
                         <Button color="gray">
-                            <Link href={`https://qm.qq.com/q/7onbAp4PUQ`}>
+                            <Link href={`https://qm.qq.com/q/N4IqFA1rag`}>
                                 {strings['social.discord']}
                             </Link>
                             <HiExternalLink className="ml-2 h-5 w-5" />

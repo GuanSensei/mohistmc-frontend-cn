@@ -1,45 +1,26 @@
-import VersionSelectorElement from '@/components/downloadSoftware/VersionSelectorElement'
 import { useRouter } from 'next/router'
 import { Project } from '@/interfaces/Project'
 import React, { useEffect, useState } from 'react'
-import { Build, ProjectBuilds } from '@/interfaces/Build'
-import NavigationTableElement from '@/components/downloadSoftware/NavigationTableElement'
-import TableBuildElement from '@/components/downloadSoftware/TableBuildElement'
-import LoadingParagraph from '@/components/downloadSoftware/LoadingParagraph'
 import { capitalizeFirstLetter } from '@/util/String'
 import { useAppSelector } from '@/util/redux/Hooks'
-import { selectTranslations, StringKey } from '@/features/i18n/TranslatorSlice'
+import { selectTranslations } from '@/features/i18n/TranslatorSlice'
 import { formatString, getLocaleStringAsArgs } from '@/util/LocaleHelper'
-import SearchElement from '@/components/downloadSoftware/SearchElement'
-import BuildDetailsModal from '@/components/downloadSoftware/BuildDetailsModal'
-import { Flowbite, Toast } from 'flowbite-react'
-import { HiExclamation, HiInformationCircle } from 'react-icons/hi'
+import { Button, Flowbite, Toast } from 'flowbite-react'
+import { HiInformationCircle } from 'react-icons/hi'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
-import { getAPIEndpoint } from '@/util/Environment'
 import Head from 'next/head'
 import { customTheme } from '@/util/Theme'
+import { SiGithubsponsors, SiPatreon } from 'react-icons/si'
+import { BsOpencollective } from 'react-icons/bs'
 
 export default function DownloadSoftware() {
     const router = useRouter()
     const strings = useAppSelector(selectTranslations)
-    const perPage = 10
     const mode = useSelector(selectTheme)
 
     // React states
     const [project, setProject] = useState<Project | undefined>()
-    const [originalBuildPages, setOriginalBuildPages] = useState<Build[][]>([])
-    const [viewedBuildPages, setViewedBuildPages] = useState<Build[][]>([])
-    const [currentPage, setCurrentPage] = useState<number>(0)
-    const [selectedVersion, setSelectedVersion] = useState<string | undefined>()
-    const [noResult, setNoResult] = useState<boolean>(false)
-    const [noBuild, setNoBuild] = useState<boolean>(false)
-    const [openModal, setOpenModal] = useState<string | undefined>()
-    const [modalBuild, setModalBuild] = useState<Build | undefined>()
-    const [toastMessageKey, setToastMessageKey] = useState<
-        StringKey | undefined
-    >()
-    const [hiColor, setHiColor] = useState<string>('orange')
 
     useEffect(() => {
         if (router.isReady) {
@@ -50,91 +31,6 @@ export default function DownloadSoftware() {
             else router.push('/404').catch()
         }
     }, [router, router.isReady, router.query])
-
-    useEffect(() => {
-        const handleVersionChanged = async () => {
-            setViewedBuildPages([])
-            setOriginalBuildPages([])
-            setNoBuild(false)
-
-            // Update the URL with the new version
-            await router.push(
-                {
-                    pathname: router.pathname,
-                    query: {
-                        ...router.query,
-                        projectVersion: selectedVersion,
-                    },
-                },
-                undefined,
-                { shallow: true },
-            )
-
-            if (project === Project.Mohist) {
-                switch (selectedVersion) {
-                    case '1.7.10':
-                        setHiColor('orange')
-                        setToastMessageKey(
-                            'downloadSoftware.mohist.1.7.10.toast',
-                        )
-                        break
-                    case '1.18.2':
-                        setHiColor('blue')
-                        setToastMessageKey(
-                            'downloadSoftware.mohist.1.18.2.toast',
-                        )
-                        break
-                    case '1.19.2':
-                        setHiColor('orange')
-                        setToastMessageKey(
-                            'downloadSoftware.mohist.1.19.2.toast',
-                        )
-                        break
-                    case '1.19.4':
-                        setHiColor('blue')
-                        setToastMessageKey(
-                            'downloadSoftware.mohist.1.19.4.toast',
-                        )
-                        break
-                    case '1.20':
-                        setHiColor('orange')
-                        setToastMessageKey('downloadSoftware.mohist.1.20.toast')
-                        break
-                }
-            }
-
-            const projectBuildsReq = await fetch(
-                `${getAPIEndpoint()}/projects/${project}/${selectedVersion}/builds`,
-            )
-            const buildsJson: ProjectBuilds = await projectBuildsReq.json()
-
-            if (!buildsJson?.builds || buildsJson?.builds?.length === 0) {
-                setNoBuild(true)
-                // TODO: Toast error
-                return
-            }
-
-            const builds = buildsJson.builds.reverse().map((build) => {
-                return {
-                    ...build,
-                    fileName: `${project}-${selectedVersion}-${build.number}-server.jar`,
-                }
-            })
-
-            const pages: Build[][] = []
-            for (let i = 0; i < builds.length; i += perPage)
-                pages.push(builds.slice(i, i + perPage))
-
-            // Check if the user have changed the version while the builds were loading
-            if (selectedVersion !== buildsJson.projectVersion) return
-
-            setOriginalBuildPages(pages)
-            setViewedBuildPages(pages)
-            setCurrentPage(0)
-        }
-
-        selectedVersion && handleVersionChanged().catch()
-    }, [selectedVersion])
 
     return (
         <section className="flex flex-col gap-6 items-center bg-gray-100 dark:bg-dark-25 pt-20 pb-20">
@@ -168,12 +64,6 @@ export default function DownloadSoftware() {
                     ? strings['downloadSoftware.mohist.desc']
                     : strings[`downloadSoftware.banner.desc`]}
             </p>
-            <BuildDetailsModal
-                build={modalBuild}
-                project={project}
-                openModal={openModal}
-                setOpenModal={setOpenModal}
-            />
             <Flowbite theme={{ theme: customTheme, mode }}>
                 <Toast>
                     <div
@@ -183,17 +73,17 @@ export default function DownloadSoftware() {
                     </div>
                     <div className="ml-3 text-sm font-normal">
                         <span className={'font-bold'}>
-                            不要在 Spigot、PaperMC 或 Forge 的论坛中寻求帮助.
+                            不要在 Spigot、PaperMC 或 Forge 的论坛中寻求帮助。
                         </span>{' '}
                         他们与MohistMC无关，不会帮助你。如果您有任何问题,
                         请使用我们的{' '}
                         <a
-                            href="https://qm.qq.com/q/7onbAp4PUQ"
+                            href="https://qm.qq.com/q/N4IqFA1rag"
                             className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
                         >
-                            QQ群
+                            QQ群{' '}
                         </a>
-                        或者
+                        或者{' '}
                         <a
                             href="https://github.com/MohistMC/Mohist/issues"
                             className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
@@ -201,138 +91,101 @@ export default function DownloadSoftware() {
                             Github
                         </a>
                     </div>
-                    <Toast.Toggle />
                 </Toast>
-            </Flowbite>
-            {toastMessageKey?.length && (
-                <Flowbite theme={{ theme: customTheme, mode }}>
-                    <Toast>
-                        <div
-                            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-${hiColor}-100 text-${hiColor}-500 dark:bg-${hiColor}-600 dark:text-white`}
-                        >
-                            <HiExclamation className="h-5 w-5" />
-                        </div>
-                        <div className="ml-3 text-sm font-normal">
-                            {strings[toastMessageKey]}
-                        </div>
-                        <Toast.Toggle />
-                    </Toast>
-                </Flowbite>
-            )}
-            <div className="relative shadow-md dark:shadow-md dark:bg-dark-50 bg-white sm:rounded-lg mt-3 p-5">
-                <div
-                    className={`flex md:justify-between gap-2 justify-center items-center pb-4 flex-wrap`}
-                >
-                    <SearchElement
-                        originalBuildPages={originalBuildPages}
-                        setViewedBuildPages={setViewedBuildPages}
-                        setCurrentPage={setCurrentPage}
-                        setNoResult={setNoResult}
-                        perPage={perPage}
-                        strings={strings}
-                        project={project}
-                        selectedVersion={selectedVersion}
-                    />
-                    <VersionSelectorElement
-                        selectedVersion={selectedVersion}
-                        setSelectedVersion={setSelectedVersion}
-                        software={project}
-                    />
+                <Toast>
+                    <div
+                        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-red-500 dark:bg-red-600 dark:text-white`}
+                    >
+                        <HiInformationCircle className="h-5 w-5" />
+                    </div>
+                    <div className="ml-3 text-sm font-normal">
+                        <span className={'font-bold'}>
+                            由于介质原因，暂不直接提供二进制文件。
+                        </span>{' '}
+                        请前往 GitHub Actions, 进行下载。
+                    </div>
+                </Toast>
+                <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                    {project === Project.Mohist && (
+                        <>
+                            <Button
+                                href="https://github.com/MohistMC/Mohist/actions?query=branch%3A1.7.10"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.7.10
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Mohist/actions?query=branch%3A1.12.2"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.12.2
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Mohist/actions?query=branch%3A1.16.5"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.16.5
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Mohist/actions?query=branch%3A1.18.2"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.18.2
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Mohist/actions?query=branch%3A1.19.2"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.19.2
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Mohist/actions?query=branch%3A1.20.1"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-red-500 text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.20.1
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Mohist/actions?query=branch%3A1.20.2"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.20.2
+                            </Button>
+                        </>
+                    )}
+                    {project === Project.Banner && (
+                        <>
+                            <Button
+                                href="https://github.com/MohistMC/Banner/actions?query=branch%3A1.7.10"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.19.4
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Banner/actions?query=branch%3A1.20.1"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-red-500 text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.20.1
+                            </Button>
+                            <Button
+                                href="https://github.com/MohistMC/Banner/actions?query=branch%3A1.21.1"
+                                target="_blank"
+                                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            >
+                                1.21.1
+                            </Button>
+                        </>
+                    )}
                 </div>
-                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-separate border-spacing-0 rounded-lg overflow-hidden">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-dark-200 dark:text-gray-300 rounded-xl">
-                        <tr>
-                            <th scope="col" className="px-6 py-3">
-                                {strings['downloadSoftware.build.name']}
-                            </th>
-                            <th
-                                scope="col"
-                                className="px-6 py-3 hidden md:table-cell"
-                            >
-                                <div className="flex items-center">
-                                    {strings['downloadSoftware.build.md5']}
-                                </div>
-                            </th>
-                            <th
-                                scope="col"
-                                className="px-6 py-3 hidden md:table-cell"
-                            >
-                                <div className="flex items-center">
-                                    {strings['downloadSoftware.build.date']}
-                                </div>
-                            </th>
-                            <th
-                                scope="col"
-                                className="px-6 py-3 hidden md:table-cell"
-                            >
-                                <div className="flex items-center">
-                                    {project === Project.Mohist
-                                        ? strings[
-                                              'downloadSoftware.build.forgever'
-                                          ]
-                                        : project === Project.Banner
-                                          ? strings[
-                                                'downloadSoftware.build.fabricver'
-                                            ]
-                                          : 'N/A'}
-                                </div>
-                            </th>
-                            <th
-                                scope="col"
-                                className="px-6 py-3 hidden md:table-cell"
-                            >
-                                <span className="sr-only">
-                                    {strings['button.download']}
-                                </span>
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                <span className="sr-only">
-                                    {strings['social.github']}
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {viewedBuildPages.length > 0 &&
-                            viewedBuildPages[currentPage].map((build, index) =>
-                                TableBuildElement({
-                                    build,
-                                    isLatest:
-                                        build === originalBuildPages[0][0],
-                                    project: project as Project,
-                                    indexOnPage: index,
-                                    strings,
-                                    setOpenModal,
-                                    setModalBuild,
-                                }),
-                            )}
-                    </tbody>
-                </table>
-                {viewedBuildPages.length === 0 && !noResult && !noBuild && (
-                    <div className="flex justify-center mt-4">
-                        <LoadingParagraph />
-                    </div>
-                )}
-                {noResult && (
-                    <div className="flex justify-center mt-4">
-                        <p className="text-gray-500 dark:text-gray-400">
-                            {strings['downloadSoftware.search.noresults']}
-                        </p>
-                    </div>
-                )}
-                {noBuild && (
-                    <div className="flex justify-center mt-4">
-                        <p className="text-gray-500 dark:text-gray-400">
-                            {strings['downloadSoftware.search.nobuilds']}
-                        </p>
-                    </div>
-                )}
-                <NavigationTableElement
-                    buildPages={viewedBuildPages}
-                    currentPage={currentPage}
-                    setCurrentPage={setCurrentPage}
-                />
-            </div>
+            </Flowbite>
         </section>
     )
 }

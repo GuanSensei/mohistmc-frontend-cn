@@ -11,6 +11,7 @@ import React, { useEffect, useState } from 'react'
 import ChoiceIssueModal from '@/components/modals/ChoiceIssueModal'
 import { useDispatch } from 'react-redux'
 import { loginUserAsync, selectUser, setState } from '@/features/user/UserSlice'
+import Image from 'next/image'
 
 const Home = () => {
     // React redux
@@ -34,7 +35,7 @@ const Home = () => {
             if (auth && auth.length) {
                 setCookie('auth', auth, { path: '/', maxAge: 21600 })
                 await loginUserAsync(true)
-                router.replace(
+                await router.replace(
                     getCookie('redirect') || router.pathname,
                     undefined,
                     { shallow: true },
@@ -93,27 +94,6 @@ const Home = () => {
                     <p className="mb-12 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
                         {strings['index.head.subtitle']}
                     </p>
-                    <div className="mb-6">
-                        <div className="ml-3 text-sm font-normal text-orange-500">
-                            <span className={'font-bold'}>
-                                我们正在招募志同道合的投资伙伴，共赴成功的旅程。邀请您成为我们背后的力量，共同书写成功故事。
-                            </span>{' '}
-                            可前往群内
-                            <a
-                                href="https://qm.qq.com/q/7onbAp4PUQ"
-                                className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
-                            >
-                                QQ群
-                            </a>{' '}
-                            联系群主 或者 发送
-                            <a
-                                href={`mailto:mohistmc@163.com`}
-                                className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
-                            >
-                                邮件
-                            </a>
-                        </div>
-                    </div>
                     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                         <Link
                             href="/downloads"
@@ -141,7 +121,7 @@ const Home = () => {
                             {strings['button.documentations']}
                         </Link>
                         <Link
-                            href="https://www.rainyun.com/MohistMC_"
+                            href="https://www.rainyun.com/rgs/MohistMC_?sp=UTvAAF"
                             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
                         >
                             一键开服
@@ -188,9 +168,23 @@ const Home = () => {
                     className={`flex flex-row flex-wrap items-center justify-center max-w-screen-xl gap-6`}
                 >
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Mohist
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/mohist.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Mohist
+                                </h2>
+                            </div>
+                        </div>
+
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.mohist.description']}
                         </p>
@@ -215,9 +209,22 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Banner
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/banner.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Banner
+                                </h2>
+                            </div>
+                        </div>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.banner.description']}
                         </p>
@@ -242,9 +249,22 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-red-600">
-                            Youer
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/youer.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Youer
+                                </h2>
+                            </div>
+                        </div>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.youer.description']}
                         </p>
@@ -269,9 +289,22 @@ const Home = () => {
                         </Link>
                     </div>
                     <div className="max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow dark:bg-dark-100 dark:border-dark-200 mr-5 ml-5 md:mr-0 md:ml-0">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-yellow-400">
-                            WuKong
-                        </h2>
+                        <div className="flex flex-row items-center gap-4 mb-4">
+                            <div className="h-16 w-16 bg-gray-50 dark:bg-dark-100 rounded-lg relative">
+                                <Image
+                                    src="/img/res/wukong.png"
+                                    alt="mohist icon"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    WuKong
+                                </h2>
+                            </div>
+                        </div>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {strings['index.cards.wukong.description']}
                         </p>
