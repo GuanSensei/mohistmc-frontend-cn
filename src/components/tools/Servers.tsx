@@ -1,3 +1,4 @@
+import { Link } from 'nextra-theme-docs'
 import React, { useEffect, useState } from 'react'
 
 interface List {
@@ -44,6 +45,14 @@ const ServerList: React.FC = () => {
                         <div className="flex flex-col">
                             <span className="font-bold text-lg text-gray-950 dark:text-gray-100">
                                 {motd.name}
+                                {motd.name === '听风吟' && (
+                                    <Link
+                                        href=""
+                                        className="bg-red-400 text-black text-xs font-medium items-center px-2.5 ml-2 rounded-md"
+                                    >
+                                        强烈推荐
+                                    </Link>
+                                )}
                             </span>
                             <span className="text-sm text-gray-700 dark:text-gray-300">
                                 {motd.text}

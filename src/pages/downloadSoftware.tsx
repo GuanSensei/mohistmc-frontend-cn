@@ -11,8 +11,6 @@ import { useSelector } from 'react-redux'
 import { selectTheme } from '@/features/theme/ThemeSlice'
 import Head from 'next/head'
 import { customTheme } from '@/util/Theme'
-import { SiGithubsponsors, SiPatreon } from 'react-icons/si'
-import { BsOpencollective } from 'react-icons/bs'
 
 export default function DownloadSoftware() {
     const router = useRouter()
